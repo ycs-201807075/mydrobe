@@ -298,6 +298,7 @@
       <a href="#"><img src="images/cart.jpg" width="58" height="58" alt=""/></a>
     </h3>
   </div>
+  <!--
   <nav class="menubar">
     <a href="#">Today</a>
     <a href="#">Daily</a>
@@ -305,6 +306,7 @@
     <a href="#">Top</a>
     <a href="#">QnA</a>
   </nav>
+  -->
 </header>
 
 
