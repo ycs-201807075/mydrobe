@@ -8,49 +8,48 @@
   <meta name="Description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <title>My Drobe community</title>
   <style>
+  .bottom{
+  	        position: absolute;
+  	        bottom: 0;
 
-	.bottom{
-	        position: absolute;
-	        bottom: 0;
+  			align-content: center;
+  			background-color: rgba(40, 40, 40, 0.7);
+  			color: #FFFFFF;
+  			font-size: 12px;
+  			float: left;
+  		}
+  		.bottom1{
 
-			align-content: center;
-			background-color: rgba(40, 40, 40, 0.7);
-			color: #FFFFFF;
-			font-size: 12px;
-			float: left;
-		}
-		.bottom1{
+  			margin-bottom: 25px;
+  		}
+  		.bottom2{
 
-			margin-bottom: 25px;
-		}
-		.bottom2{
+  			font-size: 30px;
+  			font-style: italic;
+  			font-weight: bold;
+  		}
+  		.bottom3{
 
-			font-size: 30px;
-			font-style: italic;
-			font-weight: bold;
-		}
-		.bottom3{
-
-			height: 30px;
-			background-color: #404040;
-			text-align: center;
-		}
-		.wrapper{
-		height: auto;
-        min-height: 100%;
-        padding-bottom: (footer높이);
-        }
-         .footer{
-         height: (footer높이);
-         position : relative;
-         transform : translateY(-100%);
+  			height: 30px;
+  			background-color: #404040;
+  			text-align: center;
+  		}
+  		.wrapper{
+  		height: auto;
+          min-height: 100%;
+          padding-bottom: (footer높이);
           }
+           .footer{
+           height: (footer높이);
+           position : relative;
+           transform : translateY(-100%);
+            }
 
 	</style>
 </head>
@@ -139,7 +138,7 @@
   id="post-button" onclick="writePost()"
   -->
   <div class="text-lg-end text-right">
-  <button type="button" class="btn btn-secondary" onClick="location.href='writingpage.jsp'">글쓰기</button>
+  <button type="button" class="btn btn-secondary" onclick="location.href='?target=CommunityAll/writingpage'">글쓰기</button>
   </div>
   <!-- class를 page-item->page-link->디자인은muted->링크는 공백으로(boot strap방식.) 22.09.19-->
   <!-- pagination 미적용에 대한 메모 22.09.19-->
@@ -164,27 +163,5 @@
 
 </div>
 <!--footer 부분 화면 정렬 2분할의 두번째부분 하단 시작!!! -->
-<footer class="bottom">
-  <div id='wrapper'>
-    <br><br>
-    <table style="width: 2000px" class="bottom1">
-      <tr>
-        <td align="center" style="width: 650px" rowspan="3" class="bottom2">My Drobe</td>
-        <td style="width: 800px">상호명 : (주)XX컴퍼니 &nbsp;&nbsp;&nbsp; 대표자 : XXX &nbsp;&nbsp;&nbsp; 주소 : 05468 서울특별시 강서구 OO로 224(OO동) 파크  301호</td>
-        <td rowspan="3">HOME | AGREEMENT | GUIDE | PRIVACY</td>
-      </tr>
-      <tr>
-        <td>사업자등록번호 : 456-78-00156[사업자 정보 확인] &nbsp;&nbsp;&nbsp; 개인정보보호책임자 : 김선비(youcodi@naver.com)</td>
-      </tr>
-      <tr>
-        <td>전화번호 : 02-1596-4578 &nbsp;&nbsp;&nbsp; 팩스 : 02-4567-5478</td>
-      </tr>
-    </table>
-    <div class="bottom3">
-      <h4 style="padding-top: 8px">COPYRIGHT@4462-5789 BY NEW YOUCODI ALL RIGHTS RESERVED.</h4>
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>

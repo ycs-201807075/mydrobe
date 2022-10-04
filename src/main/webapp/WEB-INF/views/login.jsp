@@ -62,10 +62,6 @@
   </style>
 </head>
 <header>
-  <!--NAVER LOGO-->
-  <div class="logo">
-    <a href="index.html"><img src="images/logo1.png" width="430px" height="250px"></a>
-  </div>
 </header>
 <body>
 <div class="login-form">
@@ -76,7 +72,7 @@
   </form>
 
   <div class="links">
-    <a href="#">비밀번호를 잊어버리셨나요?</a>
+    <a href="?target=ID">비밀번호를 잊어버리셨나요?</a>
   </div>
 </div>
 </body>

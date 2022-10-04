@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <!-- 가운데 페이지 이동 -->
 <%
     String target = request.getParameter("target");
-    <!-- 가운데 페이지 이동-->
+
     if(target == null) target = "bottom";
     String targetPage = target + ".jsp";
     //
@@ -18,19 +19,11 @@
     <title>frameset banner</title>
 </head>
 <body>
-    <table width="100%" cellpadding="5" align="center">
-    <!-- tr td 태그를 통한 화면 분할 상단. banner.jsp-->
-        <tr>
-            <td>
-                <jsp:include page="banner.jsp" flush="false" />
-            </td>
-        </tr>
-     <!-- tr td 태그를 통한 화면 분할 하단. banner.jsp-->
-        <tr>
-            <td valign="middle">
-                <jsp:include page="<%= targetPage%>" flush="false" />
-            </td>
-        </tr>
-    </table>
+    <div style="padding:0 0 300px">
+        <%@ include file="banner.jsp" %>
+    </div>
+    <div>
+        <jsp:include page="<%=targetPage%>" />
+    </div>
 </body>
 </html>

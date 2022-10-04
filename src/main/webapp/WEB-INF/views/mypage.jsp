@@ -394,26 +394,6 @@
   </div>
 </div>
 
-<footer class="bottom">
-  <div>
-    <br><br>
-    <table style="width: 2000px" class="bottom1">
-      <tr>
-        <td align="center" style="width: 650px" rowspan="3" class="bottom2">YOU CODI</td>
-        <td style="width: 800px">상호명 : (주)XX컴퍼니 &nbsp;&nbsp;&nbsp; 대표자 : XXX &nbsp;&nbsp;&nbsp; 주소 : 05468 서울특별시 강서구 OO로 224(OO동) 파크  301호</td>
-        <td rowspan="3">HOME | AGREEMENT | GUIDE | PRIVACY</td>
-      </tr>
-      <tr>
-        <td>사업자등록번호 : 456-78-00156[사업자 정보 확인] &nbsp;&nbsp;&nbsp; 개인정보보호책임자 : 김선비(youcodi@naver.com)</td>
-      </tr>
-      <tr>
-        <td>전화번호 : 02-1596-4578 &nbsp;&nbsp;&nbsp; 팩스 : 02-4567-5478</td>
-      </tr>
-    </table>
-  </div>
-  <div class="bottom3">
-    <h4 style="padding-top: 8px">COPYRIGHT@4462-5789 BY NEW YOUCODI ALL RIGHTS RESERVED.</h4>
-  </div>
-</footer>
+
 </body>
 </html>
