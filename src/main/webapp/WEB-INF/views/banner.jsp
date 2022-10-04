@@ -107,7 +107,6 @@
         <!-- 베너 2 -->
         <div class="bar_3">
             <a href="?target=today">Today</a>
-            <a href="?target=best">Best</a>
             <a href="?target=community">Community</a>
             <a href="?target=tip">Tip</a>
             <a href="?target=qna">QnA</a>

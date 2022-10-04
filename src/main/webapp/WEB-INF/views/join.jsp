@@ -143,13 +143,6 @@
 </head>
 
 <div class="member">
-    <!--사이트 로고-->
-    <header>
-        <div class="logo">
-            <a href="main.jsp"><img src="images/Mydrobelogo.png"></a>
-        </div>
-    </header>
-
     <form action="joinform.jsp" method="post" id="join">
         <!-- 브라우저 유효성 검사 제거 novalidate-->
         <!--아이디 -->
