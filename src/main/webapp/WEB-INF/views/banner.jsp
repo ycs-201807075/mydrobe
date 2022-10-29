@@ -15,6 +15,8 @@
             background-color:#FFFFFF;
             font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
             position : fixed; /* 상단 메뉴 고정 */
+            Z-index : 2;   /*우선순위를 두어 가장 앞에다 두는것. 수가 커질수록 밖으로 튀어나옴.*/
+            top: 0 ;       /* 최상단 공백 */
             width : 100%;
             }
     .menubar    .bar_logo{
@@ -23,7 +25,9 @@
     .menubar    .bar_1{
                         text-align : right;
                         padding-right : 2.0rem;
+
                         margin-bottom: 1.0rem;
+
                         }
     .menubar    .bar_1      a{
                                padding: 0.25rem;

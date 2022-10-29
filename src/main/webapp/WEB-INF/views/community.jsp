@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- 부트스트랩 때문에 생기는 충돌 css로 전부 바꿔야 할듯.
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    -->
   <title>My Drobe community</title>
   <style>
   .bottom{
@@ -69,7 +71,7 @@
     </div>
   </nav>
   <!--boot strap add -->
-<table class = "table table-striped">
+<table class = "table table-striped"> <!--한줄건너 한줄이 굵게 생기는 부트스트랩 소스-->
   <thead>
   <tr>
     <th >글번호</th>
@@ -134,7 +136,7 @@
 <hr/>
 <!--pagination:게시판 하단에 위치한 일련의 숫자 버튼. 22.09.15-->
 <!-- pagination css랑 병목으로 인한 적용 실패. 22.09.16-->
-  <!--139번 라인 DB연동시 사용가능하게 버튼 설계완료.
+  <!--138번 라인 DB연동시 사용가능하게 버튼 설계완료.
   id="post-button" onclick="writePost()"
   -->
   <div class="text-lg-end text-right">
