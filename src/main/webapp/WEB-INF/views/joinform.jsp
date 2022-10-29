@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="User" %>
-<%@ page import="UserDAO" %>
+<%@ page import="com.yuhan.mydrobe.User" %>
+<%@ page import="com.yuhan.mydrobe.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="user" class="user.User" scope="page" />
+<jsp:useBean id="user" class="com.yuhan.mydrobe.User" scope="page" />
 <jsp:setProperty name="user" property="userID" />
 <jsp:setProperty name="user" property="userPassword" />
-<jsp:setProperty name="user" property="userPwch" />
+
 <jsp:setProperty name="user" property="userName" />
 <jsp:setProperty name="user" property="userBirth" />
 <jsp:setProperty name="user" property="userPhoneNumber" />
@@ -50,7 +50,7 @@
 		 		session.setAttribute("userID",user.getUserID());
 		 		PrintWriter script = response.getWriter();
 		 		script.println("<script>");
-		 		script.println("location.href = 'index.jsp'");
+		 		script.println("location.href = 'main.jsp'");
 		 		script.println("</script>");
 		 	}
 	 	}
