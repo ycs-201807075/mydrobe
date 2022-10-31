@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 
-    <!-- 부트스트랩 때문에 생기는 충돌 css로 전부 바꿔야 할듯.
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    -->
+
   <title>My Drobe community</title>
   <style>
-  .bottom{
+         .bottom{
   	        position: absolute;
   	        bottom: 0;
 

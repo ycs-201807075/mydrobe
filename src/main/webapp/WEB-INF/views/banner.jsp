@@ -18,13 +18,15 @@
             Z-index : 2;   /*우선순위를 두어 가장 앞에다 두는것. 수가 커질수록 밖으로 튀어나옴.*/
             top: 0 ;       /* 최상단 공백 */
             width : 100%;
+            height :20%;
             }
     .menubar    .bar_logo{
                             position: absolute;
+                            margin-left:20px;
                             }
     .menubar    .bar_1{
                         text-align : right;
-                        padding-right : 2.0rem;
+                        padding-right : 6.0rem;
 
                         margin-bottom: 1.0rem;
 
@@ -33,10 +35,12 @@
                                padding: 0.25rem;
                                font-size: 1.0rem;
                                display: inline-block;
+                               margin-bottom: 1.0rem;
+
                                }
     .menubar    .bar_2{
                         position: absolute;
-                        right: 2.0rem;
+                        right: 38.5rem;
                         transform: translate();
                         background: #393E46;
                         border-radius: 2rem;
@@ -74,7 +78,6 @@
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
-                                        transition: 0.5s;
                                         }
     .menubar    .bar_3{
                         text-align: center;
@@ -90,7 +93,9 @@
     <nav class = "menubar">
         <!-- logo -->
         <div class="bar_logo">
+            <a href="?target=home">
             <img src="images/Mydrobelogo.png" alt="Error" />
+            </a>
         </div>
 
         <!-- 베너1 -->

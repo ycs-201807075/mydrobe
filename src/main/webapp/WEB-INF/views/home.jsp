@@ -13,11 +13,14 @@
 			    height: 1800px;
 			}
 			.s1{
-			    background-color: skyblue;
+
+			    background-color: white;
+
 			    position: absolute;
 			    top:0; right:0;
 			    width: 30%;
 			    height: 100%;
+			    margin-top:1.2rem;
 			}
 			.s2{
 			    position: absolute;
@@ -39,6 +42,12 @@
 				margin-top: 70px;
 				margin-left: 85px;
 			}
+			.ss1{
+			    font-weight : bold;
+                font-size : 30px;
+                margin-top: 70px;
+                margin-bottom: 40px;
+			}
 			.ss2{
 				font-weight : bold;
 				font-size : 30px;
@@ -55,6 +64,7 @@
 				font-weight : bold;
 				font-size : 30px;
 				margin-bottom: 40px;
+
 			}
 
 			.slider{
@@ -143,7 +153,10 @@
 		</div>
 		<div class="s0">
 			<div class="s1">
-			게시글
+             <div align="center" class="ss1">📣COMMUNITY📣</div>
+			 <jsp:include page = "community.jsp" flush = "false"/></br> <!--성민이의 커뮤게시판 메인에 끌어오기-->
+              <jsp:include page = "community.jsp" flush = "false"/></br>
+               <jsp:include page = "community.jsp" flush = "false"/>
 			</div>
 			<div class="s2">
 				<div align="center" class="ss2">💿TODAY💿</div>
@@ -160,13 +173,17 @@
 		</div>
 		<div class="s4">
 			<div align="center" class="ss4">💡TIP💡</div>
+            <jsp:include page = "tip.jsp" flush = "false"/> <!--민욱이의 팁게시판 메인에 끌어오기-->
+
+			<!--
 			<a href="https://www.youtube.com/watch?v=gr5CxkTUuls"><img src="images/youtube1.png"></a>
-			&nbsp;&nbsp;&nbsp;&nbsp;
+
 			<a href="https://www.youtube.com/watch?v=uEQKiS1QfBg"><img src="images/youtube2.png"></a>
-			&nbsp;&nbsp;&nbsp;&nbsp;
+
 			<a href="https://www.youtube.com/watch?v=AO7CAPINuy4"><img src="images/youtube3.png"></a>
-			&nbsp;&nbsp;&nbsp;&nbsp;
+
 			<a href="https://www.youtube.com/watch?v=gWEnHhJG4PY"><img src="images/youtube4.png"></a>
+			-->
 		</div>
 	</body>
 </html>

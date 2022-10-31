@@ -13,7 +13,10 @@
     <style>
         .bottom_table{
                       width:100%;
+                      color: #FFFFFF;
+                      background-color: #404040;
                       margin-top : 2.0rem;
+                      padding-top:3rem;
                       }
         .bottom_table   span:not(.logo){
                                         /* :not(id, name, class) : css 적용 제외 */
@@ -26,9 +29,9 @@
                                 font-weight: bold;
                                 }
         .bottom{
-                height: 30px;
-                background-color: #404040;
                 text-align: center;
+                font-size: 20px;
+                color: #FFFFFF;
                 }
         a{
             text-decoration: none;
@@ -72,9 +75,11 @@
             </span>
           </td>
         </tr>
+        <tr>
+         <td colspan="2" class="bottom">
+          <!-- <h4>COPYRIGHT@4462-5789 BY NEW MY DROBE ALL RIGHTS RESERVED.</h4> -->
+         </td>
+        </tr>
     </table>
-    <div class="bottom">
-        <h4 style="padding-top: 8px">COPYRIGHT@4462-5789 BY NEW MY DROBE ALL RIGHTS RESERVED.</h4>
-    </div>
 </body>
 </html>
