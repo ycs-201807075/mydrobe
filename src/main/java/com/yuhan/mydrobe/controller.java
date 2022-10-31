@@ -24,8 +24,12 @@ public class controller {
     public String imgtestAction() {
         return "imgtestAction"; }
 
-    @PostMapping("joinform") // 테스트로 작성, 나중에 지워야함
-    public String joinform() {
-        return "joinform"; }
+    // 회원가입, 로그인 Post 매핑
+    @PostMapping("joinAction")
+    public String joinAction() {
+        return "joinAction"; }
+    @PostMapping("loginAction")
+    public String loginAction() {
+        return "loginAction"; }
 
 }
