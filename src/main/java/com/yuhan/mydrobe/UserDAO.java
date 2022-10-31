@@ -23,6 +23,20 @@ public class UserDAO {
         }
     }
 
+    public String getDate() {   // 날짜 가져오는 함수
+        String SQL = "SELECT NOW()";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getString(1);
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return ""; //데이터베이스 오류
+    }
+
     public int login(String userID, String userPassword) {
         String SQL = "SELECT userPassword FROM USER WHERE userID = ?";  // 데이터베이스에서 아이디로 패스워드 조회
         try {
@@ -43,15 +57,17 @@ public class UserDAO {
     }
 
     public int join(User user) {
-        String SQL = "INSERT INTO USER VALUES(?,?,?,?,?,?)";  // 데이터베이스에 회원정보 입력
+        String SQL = "INSERT INTO USER VALUES(?, ?, ?, ?, ?, ?, ?, ?)";  // 데이터베이스에 회원정보 입력
         try {
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, user.getUserID());
-            pstmt.setString(2, user.getUserPassword());
-            pstmt.setString(3, user.getUserName());
-            pstmt.setString(4, user.getUserBirth());
-            pstmt.setString(5, user.getUserPhoneNumber());
-            pstmt.setString(6, user.getUserEmail());
+            pstmt.setInt(2, 0); // 회원 권한 부여
+            pstmt.setString(3, user.getUserPassword());
+            pstmt.setString(4, user.getUserName());
+            pstmt.setString(5, user.getUserBirth());
+            pstmt.setString(6, user.getUserPhoneNumber());
+            pstmt.setString(7, user.getUserEmail());
+            pstmt.setString(8, getDate());
             return pstmt.executeUpdate();
         }catch(Exception e) {
             e.printStackTrace();

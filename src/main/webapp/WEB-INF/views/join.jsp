@@ -143,7 +143,7 @@
 </head>
 
 <div class="member">
-    <form action="joinform" method="post" id="join">
+    <form action="joinAction" method="post" id="join">
         <!-- 브라우저 유효성 검사 제거 novalidate-->
         <!--아이디 -->
         <div class="field">

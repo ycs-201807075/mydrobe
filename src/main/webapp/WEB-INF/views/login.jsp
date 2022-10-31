@@ -65,9 +65,9 @@
 </header>
 <body>
 <div class="login-form">
-  <form>
-    <input type="text" name="email" class="text-field" placeholder="아이디">
-    <input type="password" name="password" class="text-field" placeholder="비밀번호">
+  <form action="loginAction" method="post" id="login">
+    <input type="text" name="userID" class="text-field" placeholder="아이디">
+    <input type="password" name="userPassword" class="text-field" placeholder="비밀번호">
     <input type="submit" value="로그인" class="submit-btn">
   </form>
 
