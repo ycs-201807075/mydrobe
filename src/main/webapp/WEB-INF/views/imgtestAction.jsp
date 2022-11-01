@@ -51,9 +51,9 @@
 
 
 		// 이전 클래스 name = "file" 실제 사용자가 저장한 실제 네임
-		String fileName = multipartRequest.getOriginalFileName("file");
+		//String fileName = multipartRequest.getOriginalFileName("file");
 		// 실제 서버에 업로드 된 파일시스템 네임
-		String fileRealName = multipartRequest.getFilesystemName("file");
+		//String fileRealName = multipartRequest.getFilesystemName("file");
 
 		// 데이터베이스에 이미지 정보 저장
 		//ImgFileDAO imgFileDAO = new ImgFileDAO();
