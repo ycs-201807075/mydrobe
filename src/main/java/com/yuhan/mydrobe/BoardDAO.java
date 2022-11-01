@@ -13,7 +13,7 @@ public class BoardDAO {
 
     public BoardDAO() {
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/sample";
+            String dbURL = "jdbc:mysql://localhost:3306/mydrobe";
             String dbID = "root";
             String dbPassword = "root";
             //Class.forName("com.mysql.jdbc.Driver");

@@ -13,7 +13,7 @@ public class UserDAO {
 
     public UserDAO() {
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/sample";  // 포트번호 뒤에 데이터베이스 이름
+            String dbURL = "jdbc:mysql://localhost:3306/mydrobe";  // 포트번호 뒤에 데이터베이스 이름
             String dbID = "root";
             String dbPassword = "root";
             Class.forName("com.mysql.jdbc.Driver");
