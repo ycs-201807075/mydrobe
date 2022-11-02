@@ -2,17 +2,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <style>
+
+    </style>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
     <title>자유게시판</title>
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+<div class="container">
     <div class="board_wrap">
         <div class="board_title">
+            <!--
             <strong>자유게시판</strong>
+            -->
             <p></p>
         </div>
+
         <div class="board_list_wrap">
             <div class="board_list">
                 <div class="top">
@@ -32,28 +39,28 @@
                 <div>
                     <div class="num">4</div>
                     <div class="title"><a href="view.html">롤하고싶다</a></div>
-                    <div class="writer">장모문기</div>
+                    <div class="writer">장문기</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">3</div>
                     <div class="title"><a href="view.html">머하노?</a></div>
-                    <div class="writer">양사바리</div>
+                    <div class="writer">양바리</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">2</div>
                     <div class="title"><a href="view.html">몇기냐?</a></div>
-                    <div class="writer">해병1243기</div>
+                    <div class="writer">해병</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">1</div>
                     <div class="title"><a href="view.html">피파 내밑으로 다 ㅈ밥</a></div>
-                    <div class="writer">아무거나해유</div>
+                    <div class="writer">밈재</div>
                     <div class="date">2021.1.15</div>
                     <div class="count">33</div>
                 </div>
@@ -75,4 +82,5 @@
             </div>
         </div>
     </div>
+   </div>
 </body>

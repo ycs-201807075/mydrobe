@@ -23,6 +23,7 @@
     .menubar    .bar_logo{
                             position: absolute;
                             margin-left:20px;
+
                             }
     .menubar    .bar_1{
                         text-align : right;
@@ -39,20 +40,23 @@
 
                                }
     .menubar    .bar_2{
+
                         position: absolute;
-                        right: 38.5rem;
+                        right: 0.0rem;
                         transform: translate();
                         background: #393E46;
-                        border-radius: 2rem;
-                        padding: 0.7rem;
+                        border-radius: 3rem;
+                        padding: 0.3rem;
                         }
 
     .menubar    .bar_2:hover > .bar_2-txt{
                                             /*hover : 버튼 위로 커서 올라가면 바뀌는 효과*/
                                             width : 25.0rem;        /* textbox 크기 변경 */
+
                                             padding-left : 1.0rem;  /* textbox padding-right 변경 */
                                             }
     .menubar    .bar_2:hover > .bar_2-btn{
+
                                             background: white;
                                             color: #1e1e1e;
                                             }
@@ -65,14 +69,15 @@
                                         color: white;
                                         font-size: 16px;
                                         transition: 0.5s;       /* 정해진 시간 동안 요소의 속성값을 부드럽게 변화 */
-                                        line-height : 2.5rem;   /* line-box의 높이를 설정 */
+                                        line-height : 6.5rem;   /* line-box의 높이를 설정 */
                                         width: 0.0rem;
+                                        height: 1.0rem;
                                         }
     .menubar    .bar_2      .bar_2-btn{
                                         color:#d9d9d9;
                                         float: right;
-                                        width: 2.5rem;
-                                        height: 2.5rem;
+                                        width: 1.5rem;
+                                        height: 1.5rem;
                                         border-radius: 50%;
                                         background:#1e1e1e;
                                         display: flex;
@@ -94,7 +99,7 @@
         <!-- logo -->
         <div class="bar_logo">
             <a href="?target=home">
-            <img src="images/Mydrobelogo.png" alt="Error" />
+            <img src="images/Mydrobelogo.png" width="170rem" alt="Error" />
             </a>
         </div>
 

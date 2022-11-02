@@ -11,10 +11,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>로그인</title>
     <style>
         @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-
 		{box-sizing: border-box;
   		font-family: 'Noto Sans KR', sans-serif;
 		}
@@ -25,18 +25,15 @@
 	html {
 		height: 100%;
 	}
-
 	body {
 	    width:100%;
 	    height:100%;
 	    margin: 0;
-
   		padding-top: 200px;
   		padding-bottom: 40px;
   		font-family: "Nanum Gothic", arial, helvetica, sans-serif;
   		background-repeat: no-repeat;
 	}
-
     .card {
         margin: 0 auto; /* Added */
         float: none; /* Added */
@@ -64,12 +61,10 @@
   			border: none;
   			border: 5px solid black;
 			}
-
     #btn-Yes{
         background-color: #080808;
         border: none;
     }
-
 	.form-signin .form-control {
   		position: relative;
   		height: auto;
@@ -79,21 +74,16 @@
   		padding: 10px;
   		font-size: 16px;
 	}
-
     .card-title{
         margin-left: 30px;
     }
-
-
     a{
     	color: #000009; text-decoration: none;
     }
-
     .links{
         text-align: center;
         margin-bottom: 10px;
     }
-
     .checks{
     	color : red;
     }
@@ -132,27 +122,19 @@
   </body>
 
 	<script type="text/javascript">
-
 	  	//아이디 정규식
 		var idJ = /^[a-z0-9]{5,20}$/;
-
   		$("#member_id").focusout(function(){
 	     if($('#member_id').val() == ""){
 	   		$('#checks').text('아이디를 입력해주세요.');
 	   	  	$('#checks').css('color', 'red');
 	     }
 	     });
-
-
-
   		$("#name").focusout(function(){
 	     if($('#name').val() == ""){
 	   		$('#checks').text('비밀번호를 입력해주세요.');
 	   	  	$('#checks').css('color', 'red');
 	     }
 	     });
-
-
-
   </script>
 </html>

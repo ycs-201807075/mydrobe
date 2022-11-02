@@ -13,6 +13,7 @@
             <strong>QnA</strong>
             <p>신속하게 답변해 드립니다.</p>
         </div>
+
         <div class="board_list_wrap">
             <div class="board_list">
                 <div class="top">

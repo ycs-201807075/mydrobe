@@ -15,7 +15,6 @@
 			.s1{
 
 			    background-color: white;
-
 			    position: absolute;
 			    top:0; right:0;
 			    width: 30%;
@@ -82,12 +81,12 @@
    				margin: 0;
 			}
 			ul.imgs li{
-   				position: absolute;
+   				    position: absolute;
     				left: 10px;
     				transition-delay: 1s;
     				list-style: none;
-   				padding: 0;
-   				margin: 0;
+   				    padding: 0;
+   				    margin: 0;
 			}
 			.bullets{
    				position: absolute;
@@ -97,7 +96,7 @@
     				z-index: 2;
 			}
 			.bullets label{
-   				display: inline-block;
+   				    display: inline-block;
     				border-radius: 50%;
     				background-color: rgba(255,255,255,0.55);
     				width: 20px;
@@ -152,11 +151,12 @@
  	  		</div>
 		</div>
 		<div class="s0">
+
 			<div class="s1">
              <div align="center" class="ss1">📣COMMUNITY📣</div>
-			 <jsp:include page = "community.jsp" flush = "false"/></br> <!--성민이의 커뮤게시판 메인에 끌어오기-->
-              <jsp:include page = "community.jsp" flush = "false"/></br>
-               <jsp:include page = "community.jsp" flush = "false"/>
+			 <div style="width:50%"><jsp:include page = "community.jsp" flush = "false" /></div></br> <!--성민이의 커뮤게시판 메인에 끌어오기-->
+             <jsp:include page = "qna.jsp" flush = "false"/></br>  <!-윤찬이의 게시판 메인으로 끌어오기-->
+
 			</div>
 			<div class="s2">
 				<div align="center" class="ss2">💿TODAY💿</div>
@@ -164,26 +164,19 @@
 				<img src="images/today2.png">&nbsp;&nbsp;&nbsp;&nbsp;
 				<img src="images/today3.png">
 			</div>
+
+
 			<div class="s3">
 				<div align="center" class="ss3">🏆BEST🏆</div>
 				<img src="images/best1.png">&nbsp;&nbsp;&nbsp;&nbsp;
 				<img src="images/best2.png">&nbsp;&nbsp;&nbsp;&nbsp;
 				<img src="images/best3.png">
 			</div>
-		</div>
+        </div>
 		<div class="s4">
 			<div align="center" class="ss4">💡TIP💡</div>
             <jsp:include page = "tip.jsp" flush = "false"/> <!--민욱이의 팁게시판 메인에 끌어오기-->
-
-			<!--
-			<a href="https://www.youtube.com/watch?v=gr5CxkTUuls"><img src="images/youtube1.png"></a>
-
-			<a href="https://www.youtube.com/watch?v=uEQKiS1QfBg"><img src="images/youtube2.png"></a>
-
-			<a href="https://www.youtube.com/watch?v=AO7CAPINuy4"><img src="images/youtube3.png"></a>
-
-			<a href="https://www.youtube.com/watch?v=gWEnHhJG4PY"><img src="images/youtube4.png"></a>
-			-->
 		</div>
+
 	</body>
 </html>
