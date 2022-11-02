@@ -54,18 +54,18 @@
                 transform: rotate(90deg);
             }
         }
-       table {
-            width: 100%;
-            height: 80%;
-        }
+
         img {
             background-size: contain;
         }
 
+        table{
+            width:100%;
+        }
         td {
             text-align: center;
         }
-        a {
+        p {
             color: black;
             font-size: 20px;
             font-weight: bold;
@@ -73,9 +73,7 @@
         }
     </style>
 
-    <script>
 
-    </script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -138,48 +136,48 @@
     </script>
 <hr>
     <h1 align="center">추천 패션사이트</h1>
-    <div class="codi">
+
+<div class="test">
         <table>
             <tr>
                 <td>
-                    <p><a href="https://www.musinsa.com/app/codimap/lists"><img src="images/musinsa.jpg"></a></p>
-                    <p><a href="https://www.musinsa.com/app/codimap/lists">무신사</a></p>
+                    <p><a href="https://www.musinsa.com/app/codimap/lists" target="_blank"><img src="images/musinsa.jpg"></a></p>
+                    <p><a href="https://www.musinsa.com/app/codimap/lists" target="_blank">무신사</a></p>
                 </td>
                 <td>
-                    <p><a href="https://lookbook.nu/"><img src="images/lookbook.png"></a></p>
-                    <p><a href="https://lookbook.nu/">룩북</a></p>
+                    <p><a href="https://lookbook.nu/" target="_blank"><img src="images/lookbook.png"></a></p>
+                    <p><a href="https://lookbook.nu/" target="_blank">룩북</a></p>
                 </td>
                 <td>
-                    <p><a href="http://www.fashiongio.com/main/index.html"><img src="images/fashiongio.png"></a></p>
-                    <p><a href="http://www.fashiongio.com/main/index.html">패션지오</a></p>
+                    <p><a href="http://www.fashiongio.com/main/index.html" target="_blank"><img src="images/fashiongio.png"></a></p>
+                    <p><a href="http://www.fashiongio.com/main/index.html" target="_blank">패션지오</a></p>
                 </td>
                 <td>
-                    <p><a href="https://www.fashionbeans.com/category/mens-style/"><img src="images/fashionbeans.png"></a></p>
-                    <p><a href="https://www.fashionbeans.com/category/mens-style/">패션빈즈</a></p>
+                    <p><a href="https://www.fashionbeans.com/category/mens-style/" target="_blank"><img src="images/fashionbeans.png"></a></p>
+                    <p><a href="https://www.fashionbeans.com/category/mens-style/" target="_blank">패션빈즈</a></p>
                 </td>
         <tr>
 
         <tr>
             <td>
-            <p><a href="https://camscon.kr/"><img src="images/camscon.png"></a></p>
-            <p><a href="https://camscon.kr/">캠스콘</a></p>
+            <p><a href="https://camscon.kr/" target="_blank"><img src="images/camscon.png"></a></p>
+            <p><a href="https://camscon.kr/" target="_blank">캠스콘</a></p>
             </td>
             <td>
-                <p><a href="https://www.thesartorialist.com/"><img src="images/thesartorialist.png"></a></p>
-                <p><a href="https://www.thesartorialist.com/">사토리얼리스트</a></p>
+                <p><a href="https://www.thesartorialist.com/" target="_blank"><img src="images/thesartorialist.png"></a></p>
+                <p><a href="https://www.thesartorialist.com/" target="_blank">사토리얼리스트</a></p>
             </td>
             <td>
-                <a href="https://ko.codibook.net/"><img src="images/codibook.png"></a></p>
-                <p><a href="https://ko.codibook.net/"> 코디북</a></p>
+                <a href="https://ko.codibook.net/" target="_blank"><img src="images/codibook.png"></a></p>
+                <p><a href="https://ko.codibook.net/" target="_blank"> 코디북</a></p>
             </td>
             <td>
-                <a href="https://hypebeast.kr/"><img src="images/hypebeast.png"></a></p>
-                <p><a href="https://hypebeast.kr/">하입비스트</a></p>
+                <a href="https://hypebeast.kr/" target="_blank"><img src="images/hypebeast.png"></a></p>
+                <p><a href="https://hypebeast.kr/" target="_blank">하입비스트</a></p>
             </td>
 
         </tr>
         </table>
-    </div>
 
 </body>
 </html>

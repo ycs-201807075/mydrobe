@@ -12,7 +12,7 @@
 
   <style>
     .menubar{
-            background-color:#FFFFFF;
+            background-color:#ffffff;
             font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
             position : fixed; /* 상단 메뉴 고정 */
             Z-index : 2;   /*우선순위를 두어 가장 앞에다 두는것. 수가 커질수록 밖으로 튀어나옴.*/
@@ -22,27 +22,23 @@
             }
     .menubar    .bar_logo{
                             position: absolute;
-                            margin-left:20px;
-
+                            margin-left:5rem;
                             }
     .menubar    .bar_1{
                         text-align : right;
-                        padding-right : 6.0rem;
-
-                        margin-bottom: 1.0rem;
+                        padding-right : 5.0rem;
+                        padding-top : 1.0rem;
 
                         }
     .menubar    .bar_1      a{
                                padding: 0.25rem;
-                               font-size: 1.0rem;
+                               font-size: 1.5rem;
                                display: inline-block;
-                               margin-bottom: 1.0rem;
-
                                }
     .menubar    .bar_2{
-
+                        margin-top:2.0rem;
                         position: absolute;
-                        right: 0.0rem;
+                        right: 2.0rem;
                         transform: translate();
                         background: #393E46;
                         border-radius: 3rem;
@@ -51,9 +47,9 @@
 
     .menubar    .bar_2:hover > .bar_2-txt{
                                             /*hover : 버튼 위로 커서 올라가면 바뀌는 효과*/
-                                            width : 25.0rem;        /* textbox 크기 변경 */
+                                            width : 20.0rem;        /* textbox 크기 변경 */
 
-                                            padding-left : 1.0rem;  /* textbox padding-right 변경 */
+                                            padding-left : 2.0rem;  /* textbox padding-right 변경 */
                                             }
     .menubar    .bar_2:hover > .bar_2-btn{
 
@@ -69,9 +65,9 @@
                                         color: white;
                                         font-size: 16px;
                                         transition: 0.5s;       /* 정해진 시간 동안 요소의 속성값을 부드럽게 변화 */
-                                        line-height : 6.5rem;   /* line-box의 높이를 설정 */
+                                        line-height : 1.0rem;   /* line-box의 높이를 설정 */
                                         width: 0.0rem;
-                                        height: 1.0rem;
+                                        height: 3.0rem;
                                         }
     .menubar    .bar_2      .bar_2-btn{
                                         color:#d9d9d9;
@@ -86,7 +82,6 @@
                                         }
     .menubar    .bar_3{
                         text-align: center;
-                        margin-top: 3.0rem;
                         }
     .menubar    .bar_3      a{
                                padding: 3.5rem;
@@ -105,8 +100,8 @@
 
         <!-- 베너1 -->
         <div class="bar_1">
-            <a href="?target=login">Login</a>
-            <a href="?target=join">SingUp</a>
+            <a href="?target=login">Login</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+            <a href="?target=join">SingUp</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
             <a href="?target=mypage">My</a>
         </div>
 

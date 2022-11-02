@@ -10,7 +10,7 @@
     <title>HelloWorld!</title>
 
     <!-- Head -->
-    <div style="padding:0 0 250px">
+    <div style="padding:0 0 10rem">
         <%@ include file="banner.jsp" %>
     </div>
 </header>
