@@ -64,7 +64,7 @@
 
 			.slider{
     				width: 100%;
-   				    height: 370px;
+   				    height: 500px;
     				position: relative;
     				margin: 0 auto;
     				overflow: hidden;
@@ -134,17 +134,17 @@
 	<body>
 		<div class="slider">
 			<input type="radio" name="slide" id="Banner1" checked>
-  			<input type="radio" name="slide" id="Banner2">
-    			<input type="radio" name="slide" id="Banner3">
+  			<input type="radio" name="slide" id="banner4">
+    			<input type="radio" name="slide" id="banner5">
     				<ul id="imgholder" class="imgs">
-        					<li><img src="./images/Banner1.png" width=1520rem height=360rem></li>
-        					<li><img src="./images/Banner2.png" width=1520rem height=360rem></li>
-     					<li><img src="./images/Banner3.png" width=1520rem height=360rem></li>
+        					<li><img src="./images/Banner1.png" width=1520rem height=500rem></li>
+        					<li><img src="./images/banner4.png" width=1520rem height=500rem></li>
+     					    <li><img src="./images/banner5.png" width=1520rem height=500rem></li>
   				</ul>
     			<div class="bullets">
         				<label for="Banner1">&nbsp;</label>
-        				<label for="Banner2">&nbsp;</label>
-        				<label for="Banner3">&nbsp;</label>
+        				<label for="banner4">&nbsp;</label>
+        				<label for="banner5">&nbsp;</label>
  	  		</div>
 		</div>
 		<div class="s0">

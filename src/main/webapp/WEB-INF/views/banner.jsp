@@ -26,20 +26,20 @@
                             }
     .menubar    .bar_1{
                         text-align : right;
-                        padding-right : 5.0rem;
+                        padding-right : 3.0rem;
                         padding-top : 1.0rem;
 
                         }
     .menubar    .bar_1      a{
                                padding: 0.25rem;
-                               font-size: 1.5rem;
+                               font-size: 1.0rem;
                                display: inline-block;
                                }
     .menubar    .bar_2{
                         margin-top:2.0rem;
                         position: absolute;
                         right: 2.0rem;
-                        background: #393E46;
+                        background: #000000;
                         border-radius: 3rem;
                         padding: 0.3rem;
                         bottom:0.5rem;
@@ -93,7 +93,7 @@
         <!-- logo -->
         <div class="bar_logo">
             <a href="?target=home">
-            <img src="images/Mydrobelogo.png" width="170rem" alt="Error" />
+            <img src="images/Mydrobelogo.png" width="200rem" alt="Error" />
             </a>
         </div>
 

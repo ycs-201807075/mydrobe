@@ -14,7 +14,7 @@
         .bottom_table{
                       width:100%;
                       color: #FFFFFF;
-                      background-color: #404040;
+                      background-color: #000000;
                       margin-top : 2.0rem;
                       padding-top:3rem;
                       }
@@ -77,7 +77,7 @@
         </tr>
         <tr>
          <td colspan="2" class="bottom">
-          <!-- <h4>COPYRIGHT@4462-5789 BY NEW MY DROBE ALL RIGHTS RESERVED.</h4> -->
+          <h5>COPYRIGHT@4462-5789 BY NEW MY DROBE ALL RIGHTS RESERVED.</h5>
          </td>
         </tr>
     </table>
