@@ -150,14 +150,22 @@
 		<div class="s0">
 			<div class="s2">
 				<div align="center" class="ss2">🏆BEST🏆</div>
-                        <table  class="ss2_1">
-				        <tr>
-				            <td>🥇<br><br><img src="images/best1.png" class="img_1"></td>
-				            <td>🥈<br><br><img src="images/best2.png" class="img_1"></td>
-				            <td>🥉<br><br><img src="images/best3.png" class="img_1"></td>
-				        </tr>
-                        </table>
-			</div>
+                    <%
+                        ImgFileDAO imgFileDAO = new ImgFileDAO();
+                        ArrayList<ImgFile> list = ImgFileDAO.getListTodayImg();
+                        for(int i = 0; i < 3; i++) {
+                    %>
+                    <table  class="ss2_1">
+                        <tr>
+                            <td>🥇<br><br><img src="uploadIamge/<%= list.get(i).getFIleReadName() %>" class="img_1"></td>
+                            <td>🥈<br><br><img src="uploadIamge/<%= list.get(i).getFIleReadName() %>" class="img_1"></td>
+                            <td>🥉<br><br><img src="uploadIamge/<%= list.get(i).getFIleReadName() %>" class="img_1"></td>
+                        </tr>
+                    </table>
+                    <%
+                        }
+                    %>
+                </div>
 
 			<div class="s3">
             	<div align="center" class="ss3">💿TODAY💿</div>

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class BoardDAO {
 
-    private Connection conn;	//db에 접근하는 객체
+    private Connection conn;    //db에 접근하는 객체
     private ResultSet rs;
 
     public BoardDAO() {
@@ -17,8 +17,8 @@ public class BoardDAO {
             String dbID = "root";
             String dbPassword = "root";
             //Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(dbURL,dbID,dbPassword);
-        }catch (Exception e) {
+            conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -31,7 +31,7 @@ public class BoardDAO {
             if (rs.next()) {
                 return rs.getString(1);
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ""; //데이터베이스 오류
@@ -45,7 +45,7 @@ public class BoardDAO {
             if (rs.next()) {
                 return rs.getInt(1) + 1;
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return 1; //첫번째 게시물인 경우
@@ -60,7 +60,7 @@ public class BoardDAO {
             if (rs.next()) {
                 return rs.getInt(1);
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return -1;
@@ -79,10 +79,32 @@ public class BoardDAO {
             pstmt.setInt(7, 0);
             pstmt.executeUpdate();
             return getNext();
-        }catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return -1; //데이터베이스 오류
+    }
+
+    public ArrayList<Board> getListToday() {
+        String SQL = "SELECT * FROM BOARD ORDER BY board DESC";
+        ArrayList<Board> list = new ArrayList<Board>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Board board = new Board();
+                board.setBoardID(rs.getInt(1));
+                board.setUserID(rs.getString(2));
+                board.setBoardTitle(rs.getString(3));
+                board.setBoardContent(rs.getString(5));
+                board.setBoardRead(rs.getInt(6));
+                board.setBoardLike(rs.getInt(7));
+                list.add(board);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list; //데이터베이스 오류
     }
 
     // 밑에는 가져온건데 쓸지 말지 몰라서 일단 냅둠 더잇는데 몇개 지움

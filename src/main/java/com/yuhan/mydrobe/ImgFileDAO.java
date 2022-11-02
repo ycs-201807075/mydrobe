@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 public class ImgFileDAO {
@@ -59,4 +60,41 @@ public class ImgFileDAO {
         }
         return -1;
     }
+
+
+    public ArrayList<ImgFile> getListTodayImg() {
+        String SQL = "SELECT * FROM FILE";
+        ArrayList<ImgFile> list = new ArrayList<ImgFile>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                ImgFile imgFile = new ImgFile();
+                imgFile.setImgFileName(rs.getString(3));
+                imgFile.setImgFileRealName(rs.getString(4));
+                list.add(imgFile);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list; //데이터베이스 오류
+    }
+
+    public ImgFile getImgFile() {
+        String SQL = "SELECT * FROM FILE";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                ImgFile imgFile = new ImgFile();
+                imgFile.setImgFileName(rs.getString(3));
+                imgFile.setImgFileRealName(rs.getString(4));
+                return imgFile;
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
