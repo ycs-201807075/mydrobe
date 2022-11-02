@@ -141,38 +141,38 @@
         <table>
             <tr>
                 <td>
-                    <p><a href="https://www.musinsa.com/app/codimap/lists" target="_blank"><img src="images/musinsa.jpg"></a></p>
+                    <p><a href="https://www.musinsa.com/app/codimap/lists" target="_blank"><img src="images/musinsa.jpg" width="250px" height="150px"></a></p>
                     <p><a href="https://www.musinsa.com/app/codimap/lists" target="_blank">무신사</a></p>
                 </td>
                 <td>
-                    <p><a href="https://lookbook.nu/" target="_blank"><img src="images/lookbook.png"></a></p>
+                    <p><a href="https://lookbook.nu/" target="_blank"><img src="images/lookbook.png" width="250px" height="150px"></a></p>
                     <p><a href="https://lookbook.nu/" target="_blank">룩북</a></p>
                 </td>
                 <td>
-                    <p><a href="http://www.fashiongio.com/main/index.html" target="_blank"><img src="images/fashiongio.png"></a></p>
+                    <p><a href="http://www.fashiongio.com/main/index.html" target="_blank"><img src="images/fashiongio.png" width="250px" height="150px"></a></p>
                     <p><a href="http://www.fashiongio.com/main/index.html" target="_blank">패션지오</a></p>
                 </td>
                 <td>
-                    <p><a href="https://www.fashionbeans.com/category/mens-style/" target="_blank"><img src="images/fashionbeans.png"></a></p>
+                    <p><a href="https://www.fashionbeans.com/category/mens-style/" target="_blank"><img src="images/fashionbeans.png" width="250px" height="150px"></a></p>
                     <p><a href="https://www.fashionbeans.com/category/mens-style/" target="_blank">패션빈즈</a></p>
                 </td>
         <tr>
 
         <tr>
             <td>
-            <p><a href="https://camscon.kr/" target="_blank"><img src="images/camscon.png"></a></p>
+            <p><a href="https://camscon.kr/" target="_blank"><img src="images/camscon.png" width="250px" height="150px"></a></p>
             <p><a href="https://camscon.kr/" target="_blank">캠스콘</a></p>
             </td>
             <td>
-                <p><a href="https://www.thesartorialist.com/" target="_blank"><img src="images/thesartorialist.png"></a></p>
+                <p><a href="https://www.thesartorialist.com/" target="_blank"><img src="images/thesartorialist.png" width="250px" height="150px"></a></p>
                 <p><a href="https://www.thesartorialist.com/" target="_blank">사토리얼리스트</a></p>
             </td>
             <td>
-                <a href="https://ko.codibook.net/" target="_blank"><img src="images/codibook.png"></a></p>
+                <a href="https://ko.codibook.net/" target="_blank"><img src="images/codibook.png" width="250px" height="150px"></a></p>
                 <p><a href="https://ko.codibook.net/" target="_blank"> 코디북</a></p>
             </td>
             <td>
-                <a href="https://hypebeast.kr/" target="_blank"><img src="images/hypebeast.png"></a></p>
+                <a href="https://hypebeast.kr/" target="_blank"><img src="images/hypebeast.png" width="250px" height="150px"></a></p>
                 <p><a href="https://hypebeast.kr/" target="_blank">하입비스트</a></p>
             </td>
 
