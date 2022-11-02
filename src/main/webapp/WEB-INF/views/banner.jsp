@@ -39,17 +39,16 @@
                         margin-top:2.0rem;
                         position: absolute;
                         right: 2.0rem;
-                        transform: translate();
                         background: #393E46;
                         border-radius: 3rem;
                         padding: 0.3rem;
+                        bottom:0.5rem;
                         }
 
     .menubar    .bar_2:hover > .bar_2-txt{
                                             /*hover : 버튼 위로 커서 올라가면 바뀌는 효과*/
-                                            width : 20.0rem;        /* textbox 크기 변경 */
-
-                                            padding-left : 2.0rem;  /* textbox padding-right 변경 */
+                                            width : 18.0rem;        /* textbox 크기 변경 */
+                                            /* textbox padding-right 변경 */
                                             }
     .menubar    .bar_2:hover > .bar_2-btn{
 
@@ -61,13 +60,13 @@
                                         background : none;
                                         outline: none;
                                         float: left;
-                                        padding: 0;
+                                        padding-left:2rem;
                                         color: white;
                                         font-size: 16px;
-                                        transition: 0.5s;       /* 정해진 시간 동안 요소의 속성값을 부드럽게 변화 */
+
                                         line-height : 1.0rem;   /* line-box의 높이를 설정 */
-                                        width: 0.0rem;
-                                        height: 3.0rem;
+                                        width: 18.0rem;
+                                        height: 3.4rem;
                                         }
     .menubar    .bar_2      .bar_2-btn{
                                         color:#d9d9d9;
@@ -115,7 +114,8 @@
 
         <!-- 베너 2 -->
         <div class="bar_3">
-            <a href="?target=today">Today</a>
+
+           <a href="?target=today">Today</a>
             <a href="?target=community">Community</a>
             <a href="?target=tip">Tip</a>
             <a href="?target=qna">QnA</a>
