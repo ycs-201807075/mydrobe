@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -8,392 +8,222 @@
   <meta name="Description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/styles.css">
 
-  <title>YOU CODDI</title>
+  <title></title>
   <style>
-		search {text-decoration: none;}
 
-
-
-		.search-box{
-		position: absolute;
-		//	width: 600px;
-		top: 50px; left: 660px;
-		transform: translate();
-		background: #393E46;
-		height: 40px;
-		border-radius: 40px;
-		padding: 10px;
-		}
-
-		.search-box:hover > .search-txt {
-		width: 500px;
-		padding:0 6px;
-		}
-
-		.search-box:hover > .search-btn {
-		background: white;
-		color: #1e1e1e;
-		}
-
-		.search-btn{
-		color:#d9d9d9;
-		float: right;
-		width: 40px; height: 40px;
-		border-radius: 50%;
-		background:#1e1e1e;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: 0.5s;
-		}
-
-		.search-txt {
-		border : none;
-		background : none;
-		outline: none;
-		float: left;
-		padding: 0;
-		color: white;
-		font-size: 16px;
-		transition: 0.5s;
-		line-height: 40px;
-		width: 0px;
-		}
-
-		.right-top{
-			float: right;
-			margin-top: 22px;
-			margin-right: 50px;
-		}
-
-		.bottom{
-			align-content: center;
-			background-color: rgba(40, 40, 40, 0.7);
-			color: #FFFFFF;
-			font-size: 12px;
-			float: left;
-		}
-		.bottom1{
-			margin-bottom: 25px;
-		}
-		.bottom2{
-			font-size: 30px;
-			font-style: italic;
-			font-weight: bold;
-		}
-		.bottom3{
-			height: 30px;
-			background-color: #404040;
-			text-align: center;
-		}
-
-		.title{
-			text-align: center;
-			font-size: 35px;
-			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-			margin-top: 200px;
-			margin-bottom: 50px;
-		}
-
-		.best_01{
-			text-align: center;
-			position: absolute;
-			left: 223px;
-			top: 1630px;
-			font-size: 13px;
-			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-		}
-		.best_02{
-			text-align: center;
-			position: absolute;
-			left: 647px;
-			top: 1630px;
-			font-size: 13px;
-			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-		}
-		.best_03{
-			text-align: center;
-			position: absolute;
-			left: 1020px;
-			top: 1630px;
-			font-size: 13px;
-			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-		}
-		.best_04{
-			text-align: center;
-			position: absolute;
-			left: 1405px;
-			top: 1630px;
-			font-size: 13px;
-			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-		}
-
-		.tip{
-			float: left;
-			margin-left: 445px;
-		}
-		.free{
-			float: left;
-			margin-left: 200px;
-			margin-bottom: 70px;
-		}
-		.qna{
-			outline:solid;
-			width: 400px;
-			height: 200px;
-			border-collapse: collapse;
-
-		}
-		.q_title{
-			text-align: center;
-			font-weight: bold;
-			font-size: 18px;
-		}
-
-        body {
-          padding: 0;
-          margin: 0;
+        .main{
+            margin-top:10px;
+            width: 100%;
+            height: 300px;
+            border: 1px;
         }
-        div {
-          box-sizing: border-box;
+        .fieldset{
+            width:69%;
+            box-sizing: border-box;
+            float:left;
+            border:5px solid #000000;
+            border-radius:20px;
+        }
+        .fieldset2{
+            width:30%;
+            box-sizing: border-box;
+            float:right;
+            border:5px solid #000000;
+            border-radius:20px;
+        }
+        .legend{
+            font-size: 30px;
+            font-weight:bold;
+        }
+        .legend2{
+            text-align:center;
+            font-size: 30px;
+            font-weight:bold;
+        }
+        .text{
+
+          font-size: 18px;
+          font-weight:bold;
+          padding:10px;
+        }
+        .text2{
+          text-align:center;
+          font-size: 18px;
+          font-weight:bold;
+          padding:10px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            /*
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            */
+
+            /* Center slide text vertically */
+
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+
         }
 
 
-        .circle {
-          display: inline-block;
-          width: 5px;
-          height: 5px;
-          border-radius: 2.5px;
-          background-color: #ff0000;
-          position: absolute;
-          top: -5px;
-          left: 110%;
+        }
+        @media (max-width: 700px) {
+            .swiper-button-next {
+                background: none;
+                right: 20px;
+                transform: rotate(90deg);
+            }
+
+            .swiper-button-prev {
+                background: none;
+                left: 20px;
+                transform: rotate(90deg);
+            }
+        }
+        .imgbtn{
+                    background-color: black;
+                    color: white;
+                    font-size:15px;
+                    border-radius:5px;
+                    padding: 10px;
+                    cursor: pointer;
         }
 
-        .green {
-          color: #33363b;
+        .deletebtn{
+            width: 10%;
+            background-color: black;
+            color: white;
+            font-size:15px;
+            border-radius:5px;
+            margin: 20px;
+            padding: 10px;
+            cursor: pointer;
         }
+        .infofix{
+                    width: 10%;
+                    background-color: black;
+                    color: white;
+                    font-size:15px;
+                    border-radius:5px;
+                    margin: 20px;
+                    padding: 10px;
+                    cursor: pointer;
+                }
 
-        .wrap {
-          background-color: #686868;
-        }
-
-        .topContainer {
-          height: 132px;
-          background-color: #33363b;
-
-          display: flex;
-          align-items: flex-end;
-          padding: 16px;
-        }
-
-        .topContainer .name {
-          font-size: 20px;
-          font-weight: bold;
-          color: #FFFFFF;
-        }
-
-        .topContainer .grade {
-          color: #FFFFFF;
-        }
-
-        .topContainer .modify {
-          color: #FFFFFF;
-          margin-left: auto;
-        }
-
-        .infoContainer {
-          background-color: white;
-          display: flex;
-          padding: 21px 16px;
-          height: 90px;
-          margin-bottom: 10px;
-        }
-
-        .infoContainer .item {
-          flex-grow: 1;
-        }
-
-        .infoContainer .number {
-          font-size: 19px;
-          font-weight: bold;
-          color: rgba(40, 40, 40, 0.7);
-        }
-
-        .infoContainer .item > div:nth-child(2) {
-          font-size: 13px;
-        }
-
-
-        .listContainer {
-          padding: 0;
-          background-color: #ffffff;
-          margin-bottom: 10px;
-        }
-
-        .listContainer .item {
-          display: flex;
-          align-items: center;
-          padding: 16px;
-          color: black;
-          text-decoration: none;
-          height: 56px;
-          box-sizing: border-box;
-        }
-
-        .listContainer .icon {
-          margin-right: 14px;
-        }
-
-        .listContainer .text {
-          font-size: 16px;
-          position: relative;
-        }
-
-        .listContainer .right {
-          margin-left: auto;
-        }
-
-
-        .infoContainer {
-          background-color: white;
-          display: flex;
-          height: 100px;
-          margin-bottom: 10px;
-        }
-
-        .infoContainer .item {
-          flex-grow: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          font-size: 13px;
-          text-decoration: none;
-          color: black;
-        }
-
-        .infoContainer .item > div:first-child {
-          margin-bottom: 2px;
-        }
-
-	</style>
+   </style>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
-<body link="#000000" vlink="#000000" alink="#000000" >
 
-<header>
-  <div class="search-box">
-    <input type="text" class="search-txt" name="" placeholder="검색어를 입력하세요">
-    <a class="search-btn" href="#">
-      <i class="fas fa-search"></i>
-    </a>
-  </div>
-  <a href="index.html"><img src="images/logo.jpg" style="margin-top: 10px; margin-left: 60px" width="200" height="109" alt=""/></a>
-  <div class="right-top">
-    <h3>
-      <a href="#"><img src="images/login.jpg" width="55" height="55" alt=""/></a>&nbsp;&nbsp;
-      <a href="#"><img src="images/my.jpg" width="55" height="55" alt=""/></a>&nbsp;&nbsp;
-      <a href="#"><img src="images/cart.jpg" width="58" height="58" alt=""/></a>
-    </h3>
-  </div>
-  <!--
-  <nav class="menubar">
-    <a href="#">Today</a>
-    <a href="#">Daily</a>
-    <a href="#">Review</a>
-    <a href="#">Top</a>
-    <a href="#">QnA</a>
-  </nav>
-  -->
-</header>
+<body>
+    <div class="main">
 
+    <fieldset class="fieldset">
+    <legend class="legend">개인정보</legend>
+        <div class="text">아이디</div>
+        <div class="text">이름</div>
+        <div class="text">생년월일</div>
+        <div class="text">전화번호</div>
+        <div class="text">이메일</div>
+        <div class="text">가입일자</div>
+    </fieldset>
 
-<div class="wrap">
-  <div class="topContainer">
-    <div>
-      <div class="grade">GOLD</div>
-      <div class="name">유한킴</div>
+    <fieldset class="fieldset2">
+        <legend class="legend2">내 활동</legend>
+            <div class="text2">좋아요</div>
+            <div class="text2">내가 쓴 글</div>
+            <div class="text2">내가 쓴 댓글</div>
+            <div class="text2"><a href="#"><input type="button" class="imgbtn" value="이미지 저장"/></a></div>
+            <div class="text2"><a href="#"><input type="button" class="imgbtn" value="정보수정"/></a></div>
+   </fieldset>
+
     </div>
-    <div class="modify">i</div>
-  </div>
-  <div class="infoContainer">
-    <div class="item">
-      <div class="number">21</div>
-      <div>방문수</div>
-    </div>
-    <div class="item">
-      <div class="number">56</div>
-      <div>내가 쓴 글</div>
-    </div>
-    <div class="item">
-      <div class="number">142</div>
-      <div>내가 쓴 댓글</div>
-    </div>
-  </div>
+      <!-- Swiper -->
+      <div class="swiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
 
-  <div class="listContainer">
-    <div class="item">기본정보</div>
-    <a href="#" class="item">
-      <div class="icon">아이디&nbsp&nbsp&nbsp&nbsp</div>
-      <div class="text">yuhan2022<span class="circle"></span></div>
-      <div class="right"> > </div>
-    </a>
-    <a href="#" class="item">
-      <div class="icon">이름&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-      <div class="text">김유한</div>
-      <div class="right"> > </div>
-    </a>
-    <a href="#" class="item">
-      <div class="icon">생년월일</div>
-      <div class="text">1999.01.01</div>
-      <div class="right"> > </div>
-    </a>
-    <a href="#" class="item">
-      <div class="icon">닉네임&nbsp&nbsp&nbsp&nbsp</div>
-      <div class="text">유한킴</div>
-      <div class="right"> > </div>
-    </a>
-    <a href="#" class="item">
-      <div class="icon">이메일&nbsp&nbsp&nbsp&nbsp</div>
-      <div class="text">yuhankim@yuhan.ac.kr</div>
-      <div class="right"> > </div>
-    </a>
-  </div>
-  <div class="listContainer">
-    <a href="#" class="item">
-      <div class="icon">ii</div>
-      <div class="text">글목록</div>
-      <div class="right"> > </div>
-    </a>
-    <a href="#" class="item">
-      <div class="icon">ii</div>
-      <div class="text">댓글목록</div>
-      <div class="right"> > </div>
-    </a>
-    <a href="#" class="item">
-      <div class="icon">ii</div>
-      <div class="text">계정관리</div>
-      <div class="right"> > </div>
-    </a>
-  </div>
-  <div class="infoContainer">
-    <a href="#" class="item">
-      <div>icon</div>
-      <div>공지사항</div>
-    </a>
-    <a href="#" class="item">
-      <div>icos</div>
-      <div>이용안내</div>
-    </a>
-    <a href="#" class="item">
-      <div>icon</div>
-      <div>고객센터</div>
-    </a>
-  </div>
-</div>
+              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
 
+              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
 
+              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
+
+              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+      </div>
+
+      <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper('.swiper', {
+                slidesPerView: 3,
+                direction: getDirection(),
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                on: {
+                    resize: function () {
+                        swiper.changeDirection(getDirection());
+                    },
+                },
+            });
+
+            function getDirection() {
+                var windowWidth = window.innerWidth;
+                var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+                return direction;
+            }
+        </script>
+
+    <!-- 회원탈퇴 팝업창 -->
+        <div style="text-align: center ">
+
+            <a href="?target="><input type="button" class="infofix" value="정보수정"/></a>
+            <input onclick="test('delete.jsp','','500','700');" type="button" class="deletebtn" value="회원탈퇴"/>
+
+            <script>
+                function test(url, title, w, h) {
+                    var screenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+                    var screenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+                    width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                    height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+                    var left = ((width / 2) - (w / 2)) + screenLeft;
+                    var top = ((height / 2) - (h / 2)) + screenTop;
+
+                    window.open("delete.jsp", title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+                }
+            </script>
+        </div>
 </body>
 </html>

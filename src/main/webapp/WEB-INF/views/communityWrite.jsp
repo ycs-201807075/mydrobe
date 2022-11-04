@@ -10,8 +10,8 @@
 <body>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>질문등록</strong>
-            <p>무엇이 궁금하신가요?</p>
+            <strong>자유게시판</strong>
+
         </div>
         <div class="board_write_wrap">
             <div class="board_write">
@@ -21,6 +21,7 @@
                         <dd><input type="text" placeholder="제목 입력"></dd>
                     </dl>
                 </div>
+                <!--
                 <div class="info">
                     <dl>
                         <dt>작성자</dt>
@@ -31,14 +32,15 @@
                         <dd><input type="password" placeholder="비밀번호 입력"></dd>
                     </dl>
                 </div>
+                -->
                 <div class="cont">
                     <textarea placeholder="내용 입력"></textarea>
                 </div>
             </div>
             <div class="bt_wrap">
 
-                <a href="?target=view" class="on">등록</a>
-                <a href="?target=qna">취소</a>
+                <a href="?target=community" class="on">등록</a>
+                <a href="?target=community">취소</a>
             </div>
         </div>
     </div>

@@ -77,7 +77,7 @@
                 <a href="#" class="bt last">>></a>
             </div>
             <div class="bt_wrap">
-                <a href="write.html" class="on">등록</a>
+                <a href="?target=communityWrite" class="on">글쓰기</a>
                 <!--<a href="#">수정</a>-->
             </div>
         </div>

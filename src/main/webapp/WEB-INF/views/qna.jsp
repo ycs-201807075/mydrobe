@@ -71,7 +71,7 @@
                 <a href="#" class="bt last">>></a>
             </div>
             <div class="bt_wrap">
-                <a href="?target=write" class="on">등록</a>
+                <a href="?target=write" class="on">글쓰기</a>
                 <!--<a href="#">수정</a>-->
             </div>
         </div>
