@@ -85,7 +85,24 @@ public class BoardDAO {
         return -1; //데이터베이스 오류
     }
 
-    public ArrayList<Board> getListToday() {
+    public ArrayList<Board> getBoardListBest() {
+        String SQL = "SELECT boardTitle FROM BOARD ORDER BY boardLike DESC LIMIT 3";
+        ArrayList<Board> list = new ArrayList<Board>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Board board = new Board();
+                board.setBoardTitle(rs.getString(1));
+                list.add(board);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list; //데이터베이스 오류
+    }
+
+    public ArrayList<Board> getBoardList() {
         String SQL = "SELECT * FROM BOARD ORDER BY board DESC";
         ArrayList<Board> list = new ArrayList<Board>();
         try {

@@ -89,6 +89,12 @@
                                }
   </style>
 </head>
+    <%
+	 	String userID = null;
+	 	if(session.getAttribute("userID") != null){
+	 		userID = (String) session.getAttribute("userID");
+	 	}
+	%>
     <nav class = "menubar">
         <!-- logo -->
         <div class="bar_logo">
@@ -98,11 +104,23 @@
         </div>
 
         <!-- 베너1 -->
+        <%
+            if(userID == null){     // 로그인 상태가 아닐 때
+        %>
         <div class="bar_1">
             <a href="?target=login">Login</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
-            <a href="?target=join">SingUp</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+            <a href="?target=join">SingUp</a>
+        </div>
+        <%
+            } else{     // 로그인 상태일 때
+        %>
+        <div class="bar_1">
+            <a href="?target=logout">Logout</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
             <a href="?target=mypage">My</a>
         </div>
+        <%
+            }
+        %>
 
         <!-- Search -->
         <div class="bar_2">
@@ -114,7 +132,6 @@
 
         <!-- 베너 2 -->
         <div class="bar_3">
-
            <a href="?target=today">Today</a>
             <a href="?target=community">Community</a>
             <a href="?target=tip">Tip</a>

@@ -1,5 +1,11 @@
-<%@ page import="java.util.Calendar" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.yuhan.mydrobe.ImgFileDAO" %>
+<%@ page import="com.yuhan.mydrobe.ImgFile" %>
+<%@ page import="com.yuhan.mydrobe.BoardDAO" %>
+<%@ page import="com.yuhan.mydrobe.Board" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.util.ArrayList" %>
 <!doctype html>
 <html>
 	<head>
@@ -150,12 +156,23 @@
 		<div class="s0">
 			<div class="s2">
 				<div align="center" class="ss2">🏆BEST🏆</div>
+                    <%
+                        // 이미지 객체
+                        ImgFileDAO imgFileDAO = new ImgFileDAO();
+                        ArrayList<ImgFile> listImgBest = imgFileDAO.getImgListBest();
+                        ArrayList<ImgFile> listImgToday = imgFileDAO.getImgListToday();
+
+                        //게시판 객체
+                        BoardDAO boardDAO = new BoardDAO();
+                        ArrayList<Board> listBoardBest = boardDAO.getBoardListBest();
+
+                    %>
                     <table  class="ss2_1">
-                	    <tr>
-                		    <td>🥇<br><br><img src="images/best1.png" class="img_1"></td>
-                			<td>🥈<br><br><img src="images/best2.png" class="img_1"></td>
-                			<td>🥉<br><br><img src="images/best3.png" class="img_1"></td>
-                		</tr>
+                        <tr>
+                            <td>🥇<br><br><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" width=200px; height=200px;><br><%= listBoardBest.get(0).getBoardTitle() %></td>
+                            <td>🥈<br><br><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" width=200px; height=200px;><br><%= listBoardBest.get(1).getBoardTitle() %></td>
+                            <td>🥉<br><br><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" width=200px; height=200px;><br><%= listBoardBest.get(2).getBoardTitle() %></td>
+                        </tr>
                     </table>
                 </div>
 

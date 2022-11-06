@@ -62,16 +62,16 @@ public class ImgFileDAO {
     }
 
 
-    public ArrayList<ImgFile> getListTodayImg() {
-        String SQL = "SELECT * FROM FILE";
+    public ArrayList<ImgFile> getImgListBest() {
+        String SQL = "SELECT F.fileName, F.fileRealName FROM FILE F, BOARD D WHERE F.boardID = D.boardID AND F.fileStart = 1 ORDER BY D.boardLike DESC LIMIT 3;";
         ArrayList<ImgFile> list = new ArrayList<ImgFile>();
         try {
             PreparedStatement pstmt = conn.prepareStatement(SQL);
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 ImgFile imgFile = new ImgFile();
-                imgFile.setImgFileName(rs.getString(3));
-                imgFile.setImgFileRealName(rs.getString(4));
+                imgFile.setImgFileName(rs.getString(1));
+                imgFile.setImgFileRealName(rs.getString(2));
                 list.add(imgFile);
             }
         } catch (Exception e) {
@@ -80,8 +80,8 @@ public class ImgFileDAO {
         return list; //데이터베이스 오류
     }
 
-    public ImgFile getImgFile() {
-        String SQL = "SELECT * FROM FILE";
+    public ImgFile getImgListToday() {
+        String SQL = "SELECT fileName, fileRealName FROM FILE WHERE fileStart = 1";
         try {
             PreparedStatement pstmt = conn.prepareStatement(SQL);
             rs = pstmt.executeQuery();
@@ -96,5 +96,4 @@ public class ImgFileDAO {
         }
         return null;
     }
-
 }

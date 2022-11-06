@@ -61,7 +61,7 @@
 </head>
 
 <div class="member">
-    <form action="joinAction" method="post" id="join">
+    <form action="loginAction" method="post" id="join">
 
         <!--아이디 -->
         <div class="field">
@@ -77,7 +77,7 @@
             <input name="userPassword" type="password" class="pw" id="pw" pattern="^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W))(?=.*[!@#$%^*+=-]).{8,15}$" title="비밀번호 형식에 맞추어 입력해주세요."
                    placeholder="비밀번호 입력" required="required" minlength="8" maxlength="15">
             <span>
-                ※ 비밀번호는 8~15자 최소 1개 이상의 영문 대,소문자와 숫자로 이루어져있습니다. <br />
+                ※ 비밀번호는 8~15자 최소 1개 이상의 영문 대,소문자와 숫자 및 특수문자로 이루어져있습니다. <br />
             </span>
         </div>
             <!--로그인 버튼 -->

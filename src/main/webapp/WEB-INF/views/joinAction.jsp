@@ -26,7 +26,7 @@
 	 		PrintWriter script = response.getWriter();
 	 		script.println("<script>");
 	 		script.println("이미 로그인이 되어 있습니다')");
-	 		script.println("location.href = 'index.jsp'");
+	 		script.println("location.href = '/'");
 	 		script.println("</script>");
 	 	}
 	 	if (user.getUserName() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserBirth() == null || user.getUserPhoneNumber() == null || user.getUserEmail() == null){
@@ -49,7 +49,7 @@
 		 		session.setAttribute("userID",user.getUserID());
 		 		PrintWriter script = response.getWriter();
 		 		script.println("<script>");
-		 		script.println("location.href = 'main.jsp'");
+		 		script.println("location.href = '/'");
 		 		script.println("</script>");
 		 	}
 	 	}
