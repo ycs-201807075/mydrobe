@@ -27,11 +27,26 @@
 
         /*member sign in*/
         .member {
-            width: 400px;
+            width: 25rem;
             margin: auto;
             padding: 0 20px;
-            margin-bottom: 20px;
+            margin-top: 10rem;
+            margin-bottom: 11rem;
+
         }
+
+       .box{
+            border: 1px solid #000000;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .login{
+            margin-top: 5px;
+            font-size: 15px;
+            text-align: center;
+        }
+
         .id {
             border: 1px solid #dadada;
             padding: 15px;
@@ -61,7 +76,11 @@
 </head>
 
 <div class="member">
-    <form action="loginAction" method="post" id="join">
+            <a href="/">
+            <img src="images/Mydrobelogo.png"  width="100%" class="img" alt="Error" />
+            </a>
+<div class="box">
+    <form action="loginAction" method="post" id="login">
 
         <!--아이디 -->
         <div class="field">
@@ -76,22 +95,22 @@
             <b>비밀번호</b>
             <input name="userPassword" type="password" class="pw" id="pw" pattern="^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W))(?=.*[!@#$%^*+=-]).{8,15}$" title="비밀번호 형식에 맞추어 입력해주세요."
                    placeholder="비밀번호 입력" required="required" minlength="8" maxlength="15">
-            <span>
-                ※ 비밀번호는 8~15자 최소 1개 이상의 영문 대,소문자와 숫자 및 특수문자로 이루어져있습니다. <br />
-            </span>
         </div>
+        <br>
             <!--로그인 버튼 -->
-            <input type="submit" id="join" value="로그인" />
+            <input type="submit" id="login" value="로그인" />
     </form>
+</div>
     <!--
     <!--비밀번호 잊어버렸을시  -->
     <footer role="contentinfo">
-        <div class="longin">
-            <p> 비밀번호를 잊어버리셨나요? <a href="findpassword.jsp"> 비밀번호 찾기 </a></p>
+        <div class="login">
+            <p> 비밀번호를 잊어버리셨나요? <a href="pwSearch"> 비밀번호 찾기 </a></p>
         </div>
     </footer>
     </script>
 
-
 </div>
+<%@ include file="bottom.jsp" %>
+
 </html>

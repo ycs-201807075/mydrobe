@@ -156,7 +156,7 @@
             <div class="text2">내가 쓴 글</div>
             <div class="text2">내가 쓴 댓글</div>
             <div class="text2"><a href="#"><input type="button" class="imgbtn" value="이미지 저장"/></a></div>
-            <div class="text2"><a href="#"><input type="button" class="imgbtn" value="정보수정"/></a></div>
+            <div class="text2"><a href="#"><input type="button" class="imgbtn" value="이미지 수정"/></a></div>
    </fieldset>
 
     </div>
@@ -207,9 +207,9 @@
     <!-- 회원탈퇴 팝업창 -->
         <div style="text-align: center ">
 
-            <a href="?target="><input type="button" class="infofix" value="정보수정"/></a>
-            <input onclick="test('delete.jsp','','500','700');" type="button" class="deletebtn" value="회원탈퇴"/>
-
+            <a href="?target=retouch"><input type="button" class="infofix" value="정보수정"/></a>
+            <a href="?target=delete"><input type="button" class="deletebtn" value="회원탈퇴"/></a>
+<!--
             <script>
                 function test(url, title, w, h) {
                     var screenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
@@ -225,5 +225,6 @@
                 }
             </script>
         </div>
+        -->
 </body>
 </html>

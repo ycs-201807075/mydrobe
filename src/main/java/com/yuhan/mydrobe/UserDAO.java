@@ -16,7 +16,7 @@ public class UserDAO {
             String dbURL = "jdbc:mysql://localhost:3306/mydrobe";  // 포트번호 뒤에 데이터베이스 이름
             String dbID = "root";
             String dbPassword = "root";
-            Class.forName("com.mysql.jdbc.Driver");
+            //Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(dbURL,dbID,dbPassword);
         }catch (Exception e) {
             e.printStackTrace();
@@ -74,4 +74,19 @@ public class UserDAO {
         }
         return -1; // 데이터베이스 목록
     }
+
+
+    public int delete(String userID, String userPassword) {
+        String SQL = "DELETE FROM USER WHERE userID = ? AND userPassword = ? ";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            pstmt.setString(2, userPassword);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1; // 데이터베이스 오류
+    }
+
 }

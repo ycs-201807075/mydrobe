@@ -12,6 +12,15 @@ public class controller {
     public String index() {
         return "index"; }
 
+    @GetMapping("login")
+    public String login() {
+        return "login"; }
+    @GetMapping("join")
+    public String join() {
+        return "join"; }
+    @GetMapping("pwSearch")
+    public String pwSearch() {
+        return "pwSearch"; }
     @GetMapping("imgtest") // 테스트로 작성, 나중에 지워야함
     public String imgtest() {
         return "imgtest"; }
@@ -32,4 +41,11 @@ public class controller {
     public String loginAction() {
         return "loginAction"; }
 
+    @PostMapping("deleteAction")
+    public String deleteAction() {
+        return "deleteAction"; }
+
+    @PostMapping("retouchAction")
+    public String retouchAction() {
+        return "retouchAction"; }
 }

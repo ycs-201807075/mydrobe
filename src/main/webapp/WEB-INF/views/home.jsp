@@ -143,9 +143,9 @@
   			<input type="radio" name="slide" id="banner4">
     			<input type="radio" name="slide" id="banner5">
     				<ul id="imgholder" class="imgs">
-        					<li><img src="./images/Banner1.png" width=1520rem height=500rem></li>
-        					<li><img src="./images/banner4.png" width=1520rem height=500rem></li>
-     					    <li><img src="./images/banner5.png" width=1520rem height=500rem></li>
+        					<li><img src="./images/Banner1.png" width=1690rem height=500rem></li>
+        					<li><img src="./images/banner4.png" width=1690rem height=500rem></li>
+     					    <li><img src="./images/banner5.png" width=1690rem height=500rem></li>
   				</ul>
     			<div class="bullets">
         				<label for="Banner1">&nbsp;</label>
@@ -160,18 +160,18 @@
                         // 이미지 객체
                         ImgFileDAO imgFileDAO = new ImgFileDAO();
                         ArrayList<ImgFile> listImgBest = imgFileDAO.getImgListBest();
-                        ArrayList<ImgFile> listImgToday = imgFileDAO.getImgListToday();
+                        //ArrayList<ImgFile> listImgToday = imgFileDAO.getImgListToday();
 
                         //게시판 객체
                         BoardDAO boardDAO = new BoardDAO();
                         ArrayList<Board> listBoardBest = boardDAO.getBoardListBest();
 
                     %>
-                    <table  class="ss2_1">
+                    <table class="ss2_1">
                         <tr>
-                            <td>🥇<br><br><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" width=200px; height=200px;><br><%= listBoardBest.get(0).getBoardTitle() %></td>
-                            <td>🥈<br><br><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" width=200px; height=200px;><br><%= listBoardBest.get(1).getBoardTitle() %></td>
-                            <td>🥉<br><br><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" width=200px; height=200px;><br><%= listBoardBest.get(2).getBoardTitle() %></td>
+                            <td>🥇<br><br><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" width=300px; height=450px;><br><%= listBoardBest.get(0).getBoardTitle() %></td>
+                            <td>🥈<br><br><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" width=300px; height=450px;><br><%= listBoardBest.get(1).getBoardTitle() %></td>
+                            <td>🥉<br><br><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" width=300px; height=450px;><br><%= listBoardBest.get(2).getBoardTitle() %></td>
                         </tr>
                     </table>
                 </div>

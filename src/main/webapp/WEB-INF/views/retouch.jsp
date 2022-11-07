@@ -2,8 +2,9 @@
 <!doctype html>
 <html>
 <head lang="ko">
-    <title>My drobe 회원가입</title>
+    <title>My drobe 회원정보 수정</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
@@ -31,6 +32,7 @@
             margin: auto;
             padding: 0 20px;
             margin-bottom: 20px;
+            margin-top: 120px;
         }
 
             .member .logo {
@@ -72,13 +74,6 @@
             margin-bottom: 5px;
         }
 
-        .pwch {
-            border: 1px solid #dadada;
-            padding: 15px;
-            width: 100%;
-            margin-bottom: 5px;
-        }
-
         .name {
             border: 1px solid #dadada;
             padding: 15px;
@@ -86,19 +81,6 @@
             margin-bottom: 5px;
         }
 
-        .usernum {
-            border: 1px solid #dadada;
-            padding: 15px;
-            width: 48%;
-            margin-bottom: 5px;
-        }
-
-        .usernum2 {
-            border: 1px solid #dadada;
-            padding: 15px;
-            width: 48%;
-            margin-bottom: 5px;
-        }
         .birth {
             border: 1px solid #dadada;
             padding: 15px;
@@ -136,10 +118,8 @@
                 width: 100%;
             }
         }
-        .login{
-                 margin-top: 5px;
-                 font-size: 15px;
-                 text-align: center;
+        .cencel{
+                    margin-top:10px;
                 }
     </style>
 
@@ -148,17 +128,13 @@
 </head>
 
 <div class="member">
-            <a href="/">
-            <img src="images/Mydrobelogo.png" width="100%" alt="Error" />
-            </a>
-    <form action="joinAction" method="post" id="join">
+    <form action="retouchAction" method="post" id="retouch">
         <!-- 브라우저 유효성 검사 제거 novalidate-->
         <!--아이디 -->
         <div class="field">
             <b>아이디</b>
-            <input name="userID" type="text" class="id" id="id" pattern="^[0-9a-zA-Z가-힣]*$" title="특수문자를 제외한 한글,영문,숫자(6~20자)만 입력해주세요"
-                   placeholder="아이디 입력(6~20자)" required="required" minlength="6" maxlength="20">
-            <!--<input type="submit" id="checkid" value="아이디 중복확인"></input> -->
+            <%= user.getUserId() %>
+            <input type="hidden" name="userID" value="<%= user.getUserId()" %>
         </div>
 
         <!--패스워드 -->
@@ -172,22 +148,12 @@
             </span>
         </div>
 
-        <!--패스워드 확인 -->
-        <div class="field">
-            <b>비밀번호 확인</b>
-            <input name="userPwch" type="password" class="pw" id="pwch" pattern="^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W))(?=.*[!@#$%^*+=-]).{8,15}$" title="비밀번호 형식에 맞추어 입력해주세요."
-                   placeholder="비밀번호 확인" required="required" minlength="8" maxlength="15">
-            <span id="alert-success" style="display: none;">비밀번호가 일치합니다.</span>
-            <span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
-        </div>
-
         <!--이름 -->
         <div class="field">
             <b>이름</b>
             <input name="userName" type="text" class="name" id="name" pattern="^[가-힣]+$" title="'홍길동'과 같은 형식의 한글 2~10자"
                    required="required" placeholder="이름 입력" minlength="2" maxlength="10">
         </div>
-
 
         <!--생년월일 -->
         <div class="field">
@@ -203,44 +169,19 @@
                        required="required" placeholder="전화번호 입력" maxlength="13">
                 <span>※ 전화번호 예시) 010-1234-1234 ※</span>
             </div>
-
             <!--이메일 -->
             <div class="field">
                 <b>이메일</b>
                 <input name="userEmail" type="email" class="email" id="eamil" pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/]"
                        title="'이메일 형식에 맞게 입력해주세요." maxlength="20" required="required" placeholder="이메일 입력">
             </div>
-            <br>
-            <!--회원가입 버튼 -->
-            <input type="submit" id="join" value="회원가입" />
+            <!--정보수정 버튼 -->
+            <input type="submit" id="retouch" value="정보수정" />
     </form>
-
-    <!--이미 아이디가 있을시  -->
-    <footer role="contentinfo">
-        <div class="login">
-            <p> 이미 가입된 아이디가 있습니까? <a href="login"> 로그인 </a></p>
-        </div>
-    </footer>
-
+             <a href="?target=mypage"><input type="button" class="cencel" value="취소"/></a>
 
     <!--비밀번호 재확인-->
     <script>
-        $('.pw').focusout(function () {
-            var pwd1 = $("#pw").val();
-            var pwd2 = $("#pwch").val();
-
-            if (pwd1 != '' && pwd2 == '') {
-                null;
-            } else if (pwd1 != "" || pwd2 != "") {
-                if (pwd1 == pwd2) {
-                    $("#alert-success").css('display', 'inline-block');
-                    $("#alert-danger").css('display', 'none');
-                } else {
-                    $("#alert-success").css('display', 'none');
-                    $("#alert-danger").css('display', 'inline-block');
-                }
-            }
-        });
 
         //생년월일 자동 하이픈
         $(document).on("keyup", ".birth", function () {
@@ -253,8 +194,6 @@
 
     </script>
 
-
 </div>
-<%@ include file="bottom.jsp" %>
    </html>
 </html>

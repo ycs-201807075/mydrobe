@@ -108,8 +108,8 @@
             if(userID == null){     // 로그인 상태가 아닐 때
         %>
         <div class="bar_1">
-            <a href="?target=login">Login</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
-            <a href="?target=join">SingUp</a>
+            <a href="login">Login</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+            <a href="join">SingUp</a>
         </div>
         <%
             } else{     // 로그인 상태일 때
