@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class UserDAO {
 
@@ -75,6 +76,28 @@ public class UserDAO {
         return -1; // 데이터베이스 목록
     }
 
+    public User getUser(String userID) {
+        String SQL = "SELECT * FROM USER WHERE userID = ?";  // 데이터베이스에서 회원 정보 불러오기
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                User user = new User();
+                user.setUserID(rs.getString(1));
+                user.setUserPassword(rs.getString(3));
+                user.setUserName(rs.getString(4));
+                user.setUserBirth(rs.getString(5));
+                user.setUserPhoneNumber(rs.getString(6));
+                user.setUserEmail(rs.getString(7));
+                user.setUserDate(rs.getString(8));
+                return user;
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public int delete(String userID, String userPassword) {
         String SQL = "DELETE FROM USER WHERE userID = ? AND userPassword = ? ";
@@ -89,4 +112,16 @@ public class UserDAO {
         return -1; // 데이터베이스 오류
     }
 
+    public int update(String userPassword,String userID) {
+        String SQL = "UPDATE USER SET userPassword = ?  WHERE userID = ? ";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userPassword);
+            pstmt.setString(2, userID);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1; // 데이터베이스 오류
+    }
 }

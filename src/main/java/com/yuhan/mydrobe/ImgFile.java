@@ -1,9 +1,16 @@
 package com.yuhan.mydrobe;
 
 public class ImgFile {
+    private int ImgFileNumber;
     private String ImgFileName;
     private String ImgFileRealName;
 
+    public int getImgFileNumber() {
+        return ImgFileNumber;
+    }
+    public void setImgFileNumber(int imgFileNumber) {
+        ImgFileNumber = imgFileNumber;
+    }
     public String getImgFileName() {
         return ImgFileName;
     }

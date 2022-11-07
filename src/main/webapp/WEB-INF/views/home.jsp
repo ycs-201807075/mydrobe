@@ -13,13 +13,32 @@
 		<title>My drobe</title>
 
 		<style>
+		    .p1{
+		        margin-left:47rem;
+                width:10rem;
+            }
+            .p2{
+                width:1500px;
+                height:2px;
+                background-color:black;
+                margin-right:7.5rem;
+            }
+
 		    .img_1{
+		        width:20rem;
+		        height:30rem;
+		        border:2px solid #000000;
         	    border-radius: 2rem;
         	}
 		    .img_2{
 		        width:15rem;
 		        height:25rem;
+		        border:2px solid #000000;
 		        border-radius: 2rem;
+		    }
+            .img_3{
+		        width:22rem;
+		        height:32rem;
 		    }
 		    .ss2_1{
                 font-size : 30px;
@@ -31,7 +50,6 @@
 			}
 
 			.s2{
-
 			    position: absolute;
 			    margin: 20px;
 			    margin-left: 25px;
@@ -135,27 +153,63 @@
 			a{
 				text-decoration: none;
 			}
+
+                        .c1{
+                        text-align:center;
+                        height:30rem;
+                        width:100rem;
+                        margin-top:10rem;
+                        margin-bottom:5rem;
+                        }
+
+            			.label_content input {display:none;}
+            			.label_content input + label {}
+            			.label_content input + label + div {
+            			display:none;
+            			width:1000px;
+            			height:600px;
+            			background:#f5f5f5;
+            			border:5px solid #eee;
+            			position:fixed;
+            			top:60%;
+            			left:50%;
+            			transform:translate(-50%,-50%);
+            			z-index:3;
+            			}
+            			.label_content input:checked + label + div {display:block;}
+            			.label_content input + label + div label {
+            			position:fixed;
+            			bottom:0;
+            			left:50%;
+            			transform:translate(-50%,50%);
+            			background:#000000;
+            			color:#fff;
+            			padding:20px;
+            			}
 		</style>
 	</head>
 	<body>
 		<div class="slider">
 			<input type="radio" name="slide" id="Banner1" checked>
   			<input type="radio" name="slide" id="banner4">
-    			<input type="radio" name="slide" id="banner5">
-    				<ul id="imgholder" class="imgs">
-        					<li><img src="./images/Banner1.png" width=1690rem height=500rem></li>
-        					<li><img src="./images/banner4.png" width=1690rem height=500rem></li>
-     					    <li><img src="./images/banner5.png" width=1690rem height=500rem></li>
-  				</ul>
-    			<div class="bullets">
-        				<label for="Banner1">&nbsp;</label>
-        				<label for="banner4">&nbsp;</label>
-        				<label for="banner5">&nbsp;</label>
+    		<input type="radio" name="slide" id="banner5">
+    		<ul id="imgholder" class="imgs">
+        		<li><img src="./images/Banner1.png" width=1690rem height=500rem></li>
+        		<li><img src="./images/banner4.png" width=1690rem height=500rem></li>
+     			<li><img src="./images/banner5.png" width=1690rem height=500rem></li>
+  			</ul>
+    		<div class="bullets">
+        		<label for="Banner1">&nbsp;</label>
+        		<label for="banner4">&nbsp;</label>
+        		<label for="banner5">&nbsp;</label>
  	  		</div>
 		</div>
 		<div class="s0">
 			<div class="s2">
-				<div align="center" class="ss2">🏆BEST🏆</div>
+				    <h1>
+                        <div class="p1">◀BEST▶</div>
+                    </h1>
+                    <hr class="p2">
                     <%
                         // 이미지 객체
                         ImgFileDAO imgFileDAO = new ImgFileDAO();
@@ -169,35 +223,80 @@
                     %>
                     <table class="ss2_1">
                         <tr>
-                            <td>🥇<br><br><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" width=300px; height=450px;><br><%= listBoardBest.get(0).getBoardTitle() %></td>
-                            <td>🥈<br><br><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" width=300px; height=450px;><br><%= listBoardBest.get(1).getBoardTitle() %></td>
-                            <td>🥉<br><br><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" width=300px; height=450px;><br><%= listBoardBest.get(2).getBoardTitle() %></td>
+                            <td>
+                                🥇<br><br>
+                                <div class="label_content">
+                                    <input type="checkbox" id="infoBest1">
+                                    <label for ="infoBest1"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" ></label>
+                                    <div class="content">
+                                        <div align="left"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_3"></div>
+                                        <div align="right"><%= listBoardBest.get(0).getBoardTitle() %></div>
+                                        <label for ="infoBest1">close</label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                🥈<br><br>
+                                <div class="label_content">
+                                    <input type="checkbox" id="infoBest2">
+                                    <label for ="infoBest2"><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" ></label>
+                                    <div class="content">
+                                        <div align="left"><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_3"></div>
+                                        <div align="right"><%= listBoardBest.get(1).getBoardTitle() %></div>
+                                        <label for ="infoBest2">close</label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                🥉<br><br>
+                                <div class="label_content">
+                                    <input type="checkbox" id="infoBest3">
+                                    <label for ="infoBest3"><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" ></label>
+                                    <div class="content">
+                                        <div align="left"><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_3"></div>
+                                        <div align="right"><%= listBoardBest.get(2).getBoardTitle() %></div>
+                                        <label for ="infoBest3">close</label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
-
+            
 			<div class="s3">
             	<div align="center" class="ss3">💿TODAY💿</div>
-            			<table class="ss2_2">
+            	<%
+
+            	%>
+            	    <table class="ss2_2">
             			<tr>
-            			    <td><img src="images/today1.png" class="img_2"></td>
-                    		<td><img src="images/today1.png" class="img_2"></td>
-                            <td><img src="images/today3.png" class="img_2"></td>
-                            <td><img src="images/today2.png" class="img_2"></td>
-                            <td><img src="images/today1.png" class="img_2"></td>
+            			    <td>
+            			    <div class="label_content">
+                            <input type="checkbox" id="infoBest1">
+                            <label for ="infoBest1"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" ></label>
+                            <div class="content">
+                                <div align="left"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_3"></div>
+                                <div align="right"><%= listBoardBest.get(0).getBoardTitle() %></div>
+                                <label for ="infoBest1">close</label>
+                                </div>
+                            </div>
+                            </td>
+                    		<td><img src="uploadImage/사진2.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진3.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진4.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진5.jpg" class="img_2"></td>
                         </tr>
                         <tr>
-                            <td><img src="images/today1.png" class="img_2"></td>
-                            <td><img src="images/today2.png" class="img_2"></td>
-                            <td><img src="images/today2.png" class="img_2"></td>
-                            <td><img src="images/today1.png" class="img_2"></td>
-                            <td><img src="images/today3.png" class="img_2"></td>
+                            <td><img src="uploadImage/사진6.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진7.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진8.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진9.jpg" class="img_2"></td>
+                            <td><img src="uploadImage/사진10.jpg" class="img_2"></td>
                         </tr>
-                        </table>
+                    </table>
             	</div>
             </div>
 			<div align="center" class="ss4">💡TIP💡</div>
             <jsp:include page = "tip.jsp" flush = "false"/> <!--민욱이의 팁게시판 메인에 끌어오기-->
-
 	</body>
 </html>

@@ -38,6 +38,34 @@ public class ImgFileDAO {
         return 1; // 첫번째 게시물인 경우
     }
 
+    public int getNextMyFile() { // 게시물 번호 지정 함수
+        String SQL = "SELECT myFileNumber FROM MYFILE ORDER BY myFileNumber DESC";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) + 1;
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return 1; // 첫번째 게시물인 경우
+    }
+
+    public int getMax() { // 게시물 번호 지정 함수
+        String SQL = "SELECT COUNT(boardID) FROM BOARD";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return 1;
+    }
+
 
     // DB에 이미지 이름 저장
     public int upload(String fileName, String fileRealName, boolean start) {
@@ -54,6 +82,21 @@ public class ImgFileDAO {
             } else {
                 pstmt.setBoolean(5, false);
             }
+            return pstmt.executeUpdate();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public int uploadMyFile(String userID, String fileName, String fileRealName) {
+        String SQL = "INSERT INTO MYFILE VALUES (?, ?, ?, ?)";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, getNextMyFile());
+            pstmt.setString(2, userID);
+            pstmt.setString(3, fileName);
+            pstmt.setString(4, fileRealName);
             return pstmt.executeUpdate();
         } catch(Exception e) {
             e.printStackTrace();
@@ -80,20 +123,64 @@ public class ImgFileDAO {
         return list; //데이터베이스 오류
     }
 
-    public ImgFile getImgListToday() {
+    public ArrayList<ImgFile> getImgListToday() {
         String SQL = "SELECT fileName, fileRealName FROM FILE WHERE fileStart = 1";
+        ArrayList<ImgFile> list = new ArrayList<ImgFile>();
         try {
             PreparedStatement pstmt = conn.prepareStatement(SQL);
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 ImgFile imgFile = new ImgFile();
-                imgFile.setImgFileName(rs.getString(3));
-                imgFile.setImgFileRealName(rs.getString(4));
-                return imgFile;
+                imgFile.setImgFileName(rs.getString(1));
+                imgFile.setImgFileRealName(rs.getString(2));
+                list.add(imgFile);
             }
         }catch(Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return list;
+    }
+
+
+    public ArrayList<ArrayList<ImgFile>> getImgListDetail() {
+        ArrayList<ArrayList<ImgFile>> list = new ArrayList<ArrayList<ImgFile>>();
+        for(int i = 1; i <= getMax(); i++) {
+            String SQL = "SELECT fileName, fileRealName FROM FILE WHERE boardID = ?";
+            ArrayList<ImgFile> lista = new ArrayList<ImgFile>();
+            try {
+                pstmt = conn.prepareStatement(SQL);
+                pstmt.setInt(1, i);
+                rs = pstmt.executeQuery();
+                while (rs.next()) {
+                    ImgFile imgFile = new ImgFile();
+                    imgFile.setImgFileName(rs.getString(1));
+                    imgFile.setImgFileRealName(rs.getString(2));
+                    lista.add(imgFile);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            list.add(lista);
+        }
+        return list;
+    }
+
+    public ArrayList<ImgFile> getImgListMy(String userID) {
+        String SQL = "SELECT myFileName, myFileRealName FROM MYFILE WHERE userID = ?";
+        ArrayList<ImgFile> list = new ArrayList<ImgFile>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                ImgFile imgFile = new ImgFile();
+                imgFile.setImgFileName(rs.getString(1));
+                imgFile.setImgFileRealName(rs.getString(2));
+                list.add(imgFile);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list; //데이터베이스 오류
     }
 }
