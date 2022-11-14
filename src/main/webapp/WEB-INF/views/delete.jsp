@@ -120,7 +120,7 @@
         </div>
 
             <!--회원탈퇴 버튼 -->
-            <input type="submit" id="delete" value="탈퇴" />
+            <input onclick="return confirm('정말로 삭제하시겠습니까?')" type="submit" id="delete" value="탈퇴" />
     </form>
             <a href="?target=mypage"><input type="button" class="cencel" value="취소"/></a>
 

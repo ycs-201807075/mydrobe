@@ -7,6 +7,7 @@ public class User {
     private String userBirth;
     private String userPhoneNumber;
     private String userEmail;
+    private String userDate;
 
     public String getUserID() {
         return userID;
@@ -43,6 +44,12 @@ public class User {
     }
     public void setUserEmail(String userEmail){
         this.userEmail = userEmail;
+    }
+    public String getUserDate(){
+        return userDate;
+    }
+    public void setUserDate(String userDate){
+        this.userDate = userDate;
     }
 }
 

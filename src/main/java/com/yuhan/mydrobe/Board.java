@@ -7,6 +7,7 @@ public class Board {
     private String boardContent;
     private int boardRead;
     private int boardLike;
+    private String boardDate;
 
     public int getBoardID() {
         return boardID;
@@ -54,5 +55,13 @@ public class Board {
 
     public void setBoardLike(int boardLike) {
         this.boardLike = boardLike;
+    }
+
+    public String getBoardDate() {
+        return boardDate;
+    }
+
+    public void setBoardDate(String boardDate) {
+        this.boardDate = boardDate;
     }
 }

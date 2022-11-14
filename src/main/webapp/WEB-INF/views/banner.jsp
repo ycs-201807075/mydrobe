@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.yuhan.mydrobe.UserDAO" %>
+<%@ page import="com.yuhan.mydrobe.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,8 +96,10 @@
 	 	if(session.getAttribute("userID") != null){
 	 		userID = (String) session.getAttribute("userID");
 	 	}
+	 	UserDAO userDAO = new UserDAO();
+        User user = userDAO.getUser(userID);
 	%>
-    <nav class = "menubar">
+    <nav class = "menubar" alink="#000000" vlink="#000000">
         <!-- logo -->
         <div class="bar_logo">
             <a href="?target=home">
@@ -108,15 +112,16 @@
             if(userID == null){     // 로그인 상태가 아닐 때
         %>
         <div class="bar_1">
-            <a href="login">Login</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+            <a href="login">Login</a>&nbsp&nbsp;|
             <a href="join">SingUp</a>
         </div>
         <%
             } else{     // 로그인 상태일 때
         %>
         <div class="bar_1">
-            <a href="?target=logout">Logout</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
-            <a href="?target=mypage">My</a>
+            안녕하세요.🙂&nbsp&nbsp;<%= user.getUserName()%>님&nbsp&nbsp&nbsp&nbsp;|
+            &nbsp&nbsp&nbsp<a href="?target=mypage">My</a>&nbsp&nbsp&nbsp&nbsp;|
+            &nbsp&nbsp<a href="?target=logout">Logout</a>
         </div>
         <%
             }
@@ -135,7 +140,7 @@
            <a href="?target=today">Today</a>
             <a href="?target=community">Community</a>
             <a href="?target=tip">Tip</a>
-            <a href="?target=qna">QnA</a>
+            <a href="?target=qna">Q&A</a>
         </div>
     </nav>
 </html>

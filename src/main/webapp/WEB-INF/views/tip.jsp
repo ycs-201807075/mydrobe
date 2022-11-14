@@ -10,6 +10,7 @@
     <style>
 
         <style>
+
         .swiper {
             width: 50%;
             height: 100%;
@@ -84,7 +85,7 @@
 <body>
 
     <h1>유튜브 TIP▶</h1>
-<hr>
+    <hr>
     <!-- Swiper -->
     <div class="swiper">
         <div class="swiper-wrapper">

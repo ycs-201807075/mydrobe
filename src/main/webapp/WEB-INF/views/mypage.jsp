@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.yuhan.mydrobe.UserDAO" %>
+<%@ page import="com.yuhan.mydrobe.User" %>
+<%@ page import="com.yuhan.mydrobe.ImgFileDAO" %>
+<%@ page import="com.yuhan.mydrobe.ImgFile" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +16,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/styles.css">
 
   <title></title>
   <style>
 
         .main{
-            margin-top:10px;
+            margin-top:60px;
             width: 100%;
             height: 300px;
             border: 1px;
@@ -45,7 +50,6 @@
             font-weight:bold;
         }
         .text{
-
           font-size: 18px;
           font-weight:bold;
           padding:10px;
@@ -54,9 +58,13 @@
           text-align:center;
           font-size: 18px;
           font-weight:bold;
+          padding: 8.6px;
+        }
+        .text3{
+          text-align:center;
+          font-size: 18px;
           padding:10px;
         }
-
         .swiper {
             width: 100%;
             height: 100%;
@@ -120,6 +128,7 @@
             padding: 10px;
             cursor: pointer;
         }
+
         .infofix{
                     width: 10%;
                     background-color: black;
@@ -130,6 +139,9 @@
                     padding: 10px;
                     cursor: pointer;
                 }
+        #file_save{
+                display: none;
+        }
 
    </style>
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -139,43 +151,65 @@
 
 <body>
     <div class="main">
+        <%
+            String userID = null;
+          	if(session.getAttribute("userID") != null){
+          	    userID = (String) session.getAttribute("userID");
+          	}
+          	if(userID == null){
+          	    PrintWriter script = response.getWriter();
+          	    script.println("<script>");
+            	script.println("alert('로그인 후 이용해주세요.')");
+            	script.println("history.back()");
+            	script.println("</script>");
+            }
+          	UserDAO userDAO = new UserDAO();
+          	User user = userDAO.getUser(userID);
 
-    <fieldset class="fieldset">
-    <legend class="legend">개인정보</legend>
-        <div class="text">아이디</div>
-        <div class="text">이름</div>
-        <div class="text">생년월일</div>
-        <div class="text">전화번호</div>
-        <div class="text">이메일</div>
-        <div class="text">가입일자</div>
-    </fieldset>
+          	ImgFileDAO imgFileDAO = new ImgFileDAO();
+          	ArrayList<ImgFile> list = imgFileDAO.getImgListMy(userID);
+        %>
 
-    <fieldset class="fieldset2">
-        <legend class="legend2">내 활동</legend>
-            <div class="text2">좋아요</div>
-            <div class="text2">내가 쓴 글</div>
-            <div class="text2">내가 쓴 댓글</div>
-            <div class="text2"><a href="#"><input type="button" class="imgbtn" value="이미지 저장"/></a></div>
-            <div class="text2"><a href="#"><input type="button" class="imgbtn" value="이미지 수정"/></a></div>
-   </fieldset>
+        <fieldset class="fieldset">
+        <legend class="legend">개인정보</legend>
+        <table>
+        <tr><td> <div class="text">아이디 </td> <td> <%= user.getUserID() %> </div> </td></tr>
+        <tr><td> <div class="text">이름 </td> <td> <%= user.getUserName() %> </div> </td></tr>
+        <tr><td> <div class="text">생년월일 </td>  <td><%= user.getUserBirth() %></div></td></tr>
+        <tr><td><div class="text">전화번호 </td><td><%= user.getUserPhoneNumber() %></div></td></tr>
+        <tr><td><div class="text">이메일</td><td> <%= user.getUserEmail() %> </div></td></tr>
+        <tr> <td><div class="text">가입일자</td> <td><%= user.getUserDate() %> </div></td></tr>
+        </table>
+        </fieldset>
 
-    </div>
-      <!-- Swiper -->
-      <div class="swiper">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
 
-              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
+        <fieldset class="fieldset2">
+            <legend class="legend2">내 활동</legend>
+                <div class="text2">좋아요 3</div>
+                <div class="text2">내가 쓴 글 3</div>
+                <div class="text2">내가 쓴 댓글 1</div>
+                <form action="mySaveAction" method="post" enctype="multipart/form-data">
+                    <div class="text3"><label class="imgbtn" for="file_save">이미지 선택<input type="file" id="file_save" multiple /></label></div>
+                    <div class="text2"><input type="submit" class="imgbtn" value="이미지 저장"/></div>
+                    <div class="text2"><input type="button" class="imgbtn" value="이미지 삭제"/></div>
+                </form>
+       </fieldset>
+    </div><br><br><br><br><br>
 
-              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
-
-              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
-
-              <div class="swiper-slide"><img src="images/Mydrobelogo.png" width="170rem" alt="Error" /></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-      </div>
+    <!-- Swiper -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+            <%
+                for(int i = 0; i < list.size(); i++){
+            %>
+                <div class="swiper-slide"><img src="myImage/<%= list.get(i).getImgFileRealName() %>" width="170rem" alt="Error" /></div>
+            <%
+                }
+            %>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
 
       <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -183,7 +217,7 @@
         <!-- Initialize Swiper -->
         <script>
             var swiper = new Swiper('.swiper', {
-                slidesPerView: 3,
+                slidesPerView: 6,
                 direction: getDirection(),
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -204,10 +238,12 @@
             }
         </script>
 
+        <br><br>
+
     <!-- 회원탈퇴 팝업창 -->
         <div style="text-align: center ">
 
-            <a href="?target=retouch"><input type="button" class="infofix" value="정보수정"/></a>
+            <a href="?target=update"><input type="button" class="infofix" value="비밀번호 변경"/></a>
             <a href="?target=delete"><input type="button" class="deletebtn" value="회원탈퇴"/></a>
 <!--
             <script>

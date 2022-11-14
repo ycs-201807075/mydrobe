@@ -21,13 +21,16 @@ public class controller {
     @GetMapping("pwSearch")
     public String pwSearch() {
         return "pwSearch"; }
+    @GetMapping("qnaboardview")
+    public String qnaboardview() {
+        return "qnaboardview"; }
+    @GetMapping("developing")
+    public String developing() {
+        return "developing"; }
+
     @GetMapping("imgtest") // 테스트로 작성, 나중에 지워야함
     public String imgtest() {
         return "imgtest"; }
-
-    @GetMapping("imgtest2") // 테스트로 작성, 나중에 지워야함
-    public String imgtest2() {
-        return "imgtest2"; }
 
     @PostMapping("imgtestAction") // 테스트로 작성, 나중에 지워야함
     public String imgtestAction() {
@@ -37,6 +40,7 @@ public class controller {
     @PostMapping("joinAction")
     public String joinAction() {
         return "joinAction"; }
+
     @PostMapping("loginAction")
     public String loginAction() {
         return "loginAction"; }
@@ -45,7 +49,25 @@ public class controller {
     public String deleteAction() {
         return "deleteAction"; }
 
-    @PostMapping("retouchAction")
-    public String retouchAction() {
-        return "retouchAction"; }
+    @PostMapping("updateAction")
+    public String updateAction() {
+        return "updateAction"; }
+
+    @PostMapping("qnawriteAction")
+    public String qnawriteAction() {
+        return "qnawriteAction"; }
+    @PostMapping("qnadeleteAction")
+    public String qnadeleteAction() {
+        return "qnadeleteAction"; }
+
+    @PostMapping("qnaupdateAction")
+    public String qnaupdateAction() {
+        return "qnaupdateAction"; }
+
+    @PostMapping("todayAction")
+    public String todayAction() {
+        return "todayAction"; }
+    @PostMapping("mySaveAction")
+    public String mySaveAction() {
+        return "mySaveAction"; }
 }

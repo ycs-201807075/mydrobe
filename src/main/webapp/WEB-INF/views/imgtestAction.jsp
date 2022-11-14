@@ -42,7 +42,7 @@
             String fileName = multipartRequest.getOriginalFileName(n);
             String fileRealName = multipartRequest.getFilesystemName(n);
             ImgFileDAO imgFileDAO = new ImgFileDAO();
-            imgFileDAO.upload(fileName, fileRealName, start);
+            //imgFileDAO.upload(fileName, fileRealName, start);
             start = false;
             out.write("파일명 : " + fileName + "<br>");
             out.write("실제파일명 : " + fileRealName + "<br>");
@@ -60,6 +60,7 @@
 		//imgFileDAO.upload(fileName, fileRealName);
 		//out.write("파일명 : " + fileName + "<br>");
         //out.write("실제파일명 : " + fileRealName + "<br>");
+
 
 	%>
 </body>
