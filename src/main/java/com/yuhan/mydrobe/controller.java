@@ -32,6 +32,10 @@ public class controller {
     public String imgtest() {
         return "imgtest"; }
 
+    @GetMapping("imgtest2") // 테스트로 작성, 나중에 지워야함
+    public String imgtest2() {
+        return "imgtest2"; }
+
     @PostMapping("imgtestAction") // 테스트로 작성, 나중에 지워야함
     public String imgtestAction() {
         return "imgtestAction"; }

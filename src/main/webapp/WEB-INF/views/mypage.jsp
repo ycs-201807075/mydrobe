@@ -16,12 +16,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/styles.css">
 
   <title></title>
   <style>
 
         .main{
-            margin-top:60px;
+            margin-top:10px;
             width: 100%;
             height: 300px;
             border: 1px;
@@ -50,6 +51,7 @@
             font-weight:bold;
         }
         .text{
+
           font-size: 18px;
           font-weight:bold;
           padding:10px;
@@ -65,6 +67,7 @@
           font-size: 18px;
           padding:10px;
         }
+
         .swiper {
             width: 100%;
             height: 100%;

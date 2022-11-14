@@ -99,6 +99,21 @@ public class ImgFileDAO {
         return -1;
     }
 
+    public int uploadMyFile(String userID, String fileName, String fileRealName) {
+        String SQL = "INSERT INTO MYFILE VALUES (?, ?, ?, ?)";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, getNextMyFile());
+            pstmt.setString(2, userID);
+            pstmt.setString(3, fileName);
+            pstmt.setString(4, fileRealName);
+            return pstmt.executeUpdate();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
 
     public ArrayList<ImgFile> getImgListBest() {
         String SQL = "SELECT F.fileName, F.fileRealName FROM FILE F, BOARD D WHERE F.boardID = D.boardID AND F.fileStart = 1 ORDER BY D.boardLike DESC LIMIT 3;";
