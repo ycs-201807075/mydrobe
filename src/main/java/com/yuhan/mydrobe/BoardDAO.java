@@ -87,14 +87,20 @@ public class BoardDAO {
     }
 
     public ArrayList<Board> getBoardListBest() {
-        String SQL = "SELECT boardTitle FROM BOARD ORDER BY boardLike DESC LIMIT 3";
+        String SQL = "SELECT * FROM BOARD ORDER BY boardLike DESC LIMIT 3";
         ArrayList<Board> list = new ArrayList<Board>();
         try {
             PreparedStatement pstmt = conn.prepareStatement(SQL);
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 Board board = new Board();
-                board.setBoardTitle(rs.getString(1));
+                board.setBoardID(rs.getInt(1));
+                board.setUserID(rs.getString(2));
+                board.setBoardTitle(rs.getString(3));
+                board.setBoardDate(rs.getString(4));
+                board.setBoardContent(rs.getString(5));
+                board.setBoardRead(rs.getInt(6));
+                board.setBoardLike(rs.getInt(7));
                 list.add(board);
             }
         } catch (Exception e) {
@@ -114,6 +120,7 @@ public class BoardDAO {
                 board.setBoardID(rs.getInt(1));
                 board.setUserID(rs.getString(2));
                 board.setBoardTitle(rs.getString(3));
+                board.setBoardDate(rs.getString(4));
                 board.setBoardContent(rs.getString(5));
                 board.setBoardRead(rs.getInt(6));
                 board.setBoardLike(rs.getInt(7));
@@ -174,6 +181,7 @@ public class BoardDAO {
                 board.setBoardID(rs.getInt(1));
                 board.setUserID(rs.getString(2));
                 board.setBoardTitle(rs.getString(3));
+                board.setBoardDate(rs.getString(4));
                 board.setBoardContent(rs.getString(5));
                 board.setBoardRead(rs.getInt(6));
                 board.setBoardLike(rs.getInt(7));

@@ -87,7 +87,7 @@
     <h1>유튜브 TIP▶</h1>
     <hr>
     <!-- Swiper -->
-    <div class="swiper">
+    <div class="swiper1">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><iframe width="600" height="500" src="https://www.youtube.com/embed/PbMGNo3f8jE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -114,7 +114,7 @@
 
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper('.swiper', {
+        var swiper1 = new Swiper('.swiper1', {
             slidesPerView: 3,
             direction: getDirection(),
             navigation: {

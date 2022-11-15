@@ -48,6 +48,15 @@
                 height:230px;
                 border:1px solid;
                         }
+            .m4{
+                position:absolute;
+                width:5rem;
+                margin-left:3rem;
+            }
+            .m5{
+                margin-left:13rem;
+                width:15rem;
+            }
             .img_1{
                         width:25rem;
                         height:35rem;
@@ -191,6 +200,7 @@
     		</style>
 </head>
 <body>
+
     <h1>
         <div class="p1">TODAY▶</div>
         <div align="right" class="p3"><a href="?target=todaywrite"><span data-attr="APO">Buy</span><span data-attr="STA">Now</span></a></div>
@@ -235,12 +245,16 @@
                     </div>
                     </div>
                     <div class="m2">
-                        <div>TEST</div>
-                        <div class="m3">내용</div>
-                        <div>좋아요 댓글 추천</div>
+                        <p>
+                            <div align="left" class="m4"><%= listBoardToday.get(i-1).getUserID()%></div>
+                            <div align="right" class="m5"><%= listBoardToday.get(i-1).getBoardDate()%></div>
+                        </p>
+                        <p class="m3"><%= listBoardToday.get(i-1).getBoardContent()%></p>
+                        <p>👁‍<%= listBoardToday.get(i-1).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardToday.get(i-1).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
                         <label for="info<%= i %>">close</label>
                     </div>
                 </div>
+                <p>🧡<%= listBoardToday.get(i-1).getBoardLike()%></p><br><br>
             </div>
         </td>
     <%

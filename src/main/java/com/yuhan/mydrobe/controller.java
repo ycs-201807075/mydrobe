@@ -24,6 +24,7 @@ public class controller {
     @GetMapping("qnaboardview")
     public String qnaboardview() {
         return "qnaboardview"; }
+
     @GetMapping("developing")
     public String developing() {
         return "developing"; }
@@ -60,6 +61,7 @@ public class controller {
     @PostMapping("qnawriteAction")
     public String qnawriteAction() {
         return "qnawriteAction"; }
+
     @PostMapping("qnadeleteAction")
     public String qnadeleteAction() {
         return "qnadeleteAction"; }
@@ -71,6 +73,7 @@ public class controller {
     @PostMapping("todayAction")
     public String todayAction() {
         return "todayAction"; }
+
     @PostMapping("mySaveAction")
     public String mySaveAction() {
         return "mySaveAction"; }

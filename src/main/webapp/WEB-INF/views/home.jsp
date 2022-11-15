@@ -12,18 +12,48 @@
 		<meta charset="utf-8">
 		<title>My drobe</title>
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
 		<style>
 		    .p1{
-		        margin-left:47rem;
+		        margin-left:54rem;
                 width:10rem;
             }
             .p2{
-                width:1500px;
+                width:1700px;
                 height:2px;
                 background-color:black;
                 margin-right:7.5rem;
             }
-
+            .m1{
+                position:absolute;
+                width:500px;
+                align:left;
+            }
+            .m2{
+                position:absolute;
+                margin-top:1rem;
+                width:500px;
+                right:0;
+            }
+            .m3{
+                margin-left:3rem;
+                margin-top:1rem;
+                width:400px;
+                height:230px;
+                border:1px solid;
+                        }
+            .m4{
+                position:absolute;
+                width:5rem;
+                margin-left:3rem;
+            }
+            .m5{
+                margin-left:13rem;
+                width:15rem;
+            }
 		    .img_1{
 		        width:20rem;
 		        height:30rem;
@@ -42,6 +72,7 @@
 		    }
 		    .ss2_1{
                 font-size : 30px;
+                 width:100rem;
 		    }
 			.s0{
 			    position: relative;
@@ -86,7 +117,7 @@
 
 			}
 
-			.slider{
+			.sl{
     				width: 100%;
    				    height: 500px;
     				position: relative;
@@ -94,7 +125,7 @@
     				overflow: hidden;
 
 			}
-			.slider input[type=radio]{
+			.sl input[type=radio]{
 				display: none;
 			}
 			ul.imgs{
@@ -124,27 +155,27 @@
     				height: 20px;
     				cursor: pointer;
 			}
-			.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+			.sl input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
    				background-color: #fff;
 			}
-			.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+			.sl input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
    				background-color: #fff;
 			}
-			.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+			.sl input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
     				background-color: #fff;
 			}
 
-			.slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+			.sl input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
     				left: 0;
     				transition: 0.5s;
    				z-index:1;
 			}
-			.slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+			.sl input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
     				left: 0;
     				transition: 0.5s;
     				z-index:1;
 			}
-			.slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+			.sl input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
    			 	    left: 0;
     				transition: 0.5s;
     				z-index:1;
@@ -154,22 +185,23 @@
 				text-decoration: none;
 			}
 
-                        .c1{
-                        text-align:center;
-                        height:30rem;
-                        width:100rem;
-                        margin-top:10rem;
-                        margin-bottom:5rem;
-                        }
+            .c1{
+                text-align:center;
+                height:30rem;
+                width:100rem;
+                margin-top:10rem;
+                margin-bottom:5rem;
+            }
 
-            			.label_content input {display:none;}
+            .label_content input {display:none;}
             			.label_content input + label {}
             			.label_content input + label + div {
             			display:none;
             			width:1000px;
             			height:600px;
             			background:#f5f5f5;
-            			border:5px solid #eee;
+            			border-radius:2rem;
+            			border:5px solid #000000;
             			position:fixed;
             			top:60%;
             			left:50%;
@@ -189,14 +221,14 @@
 		</style>
 	</head>
 	<body>
-		<div class="slider">
-			<input type="radio" name="slide" id="Banner1" checked>
-  			<input type="radio" name="slide" id="banner4">
-    		<input type="radio" name="slide" id="banner5">
+		<div class="sl">
+			<input type="radio" name="sl" id="Banner1" checked>
+  			<input type="radio" name="sl" id="banner4">
+    		<input type="radio" name="sl" id="banner5">
     		<ul id="imgholder" class="imgs">
-        		<li><img src="./images/Banner1.png" width=1690rem height=500rem></li>
-        		<li><img src="./images/banner4.png" width=1690rem height=500rem></li>
-     			<li><img src="./images/banner5.png" width=1690rem height=500rem></li>
+        		<li><img src="./images/Banner1.png" width=1895rem height=500rem></li>
+        		<li><img src="./images/banner4.png" width=1895rem height=500rem></li>
+     			<li><img src="./images/banner5.png" width=1895rem height=500rem></li>
   			</ul>
     		<div class="bullets">
         		<label for="Banner1">&nbsp;</label>
@@ -206,97 +238,219 @@
 		</div>
 		<div class="s0">
 			<div class="s2">
-				    <h1>
-                        <div class="p1">◀BEST▶</div>
-                    </h1>
-                    <hr class="p2">
-                    <%
-                        // 이미지 객체
-                        ImgFileDAO imgFileDAO = new ImgFileDAO();
-                        ArrayList<ImgFile> listImgBest = imgFileDAO.getImgListBest();
-                        //ArrayList<ImgFile> listImgToday = imgFileDAO.getImgListToday();
+                <h1>
+                    <div class="p1">◀BEST▶</div>
+                </h1>
+                <hr class="p2">
+                <%
+                    // 이미지 객체
+                    ImgFileDAO imgFileDAO = new ImgFileDAO();
+                    ArrayList<ImgFile> listImgBest = imgFileDAO.getImgListBest();
+                    ArrayList<ArrayList<ImgFile>> listImgBestDetail = imgFileDAO.getImgListBestDetail();
+                    ArrayList<ImgFile> listImgToday = imgFileDAO.getImgListToday();
+                    ArrayList<ArrayList<ImgFile>> listImgDetail = imgFileDAO.getImgListDetail();
 
-                        //게시판 객체
-                        BoardDAO boardDAO = new BoardDAO();
-                        ArrayList<Board> listBoardBest = boardDAO.getBoardListBest();
+                    //게시판 객체
+                    BoardDAO boardDAO = new BoardDAO();
+                    ArrayList<Board> listBoardBest = boardDAO.getBoardListBest();
+                    ArrayList<Board> listBoardToday = boardDAO.getBoardListToday();
 
-                    %>
-                    <table class="ss2_1">
-                        <tr>
-                            <td>
-                                🥇<br><br>
-                                <div class="label_content">
-                                    <input type="checkbox" id="infoBest1">
-                                    <label for ="infoBest1"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" ></label>
-                                    <div class="content">
-                                        <div align="left"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_3"></div>
-                                        <div align="right"><%= listBoardBest.get(0).getBoardTitle() %></div>
-                                        <label for ="infoBest1">close</label>
+
+                %>
+                <table class="ss2_1" align="center">
+                    <tr>
+                        <td>
+                            🥇<br><br>
+                            <div class="label_content">
+                                <input type="checkbox" id="infoBest1">
+                                <label for ="infoBest1"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" ></label>
+                                <div class="content">
+                                    <div class="m1">
+                                        <div class="swiper">
+                                            <div class="swiper-wrapper">
+                                                <%
+                                                    for(int i = 0;i < listImgBestDetail.get(0).size(); i++){
+                                                %>
+                                                    <div class="swiper-slide"><img src="uploadImage/<%= listImgBestDetail.get(0).get(i).getImgFileRealName() %>" class="img_1"></div>
+                                                <%
+                                                    }
+                                                %>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                    </div>
+                                    <div class="m2">
+                                        <p>
+                                            <div align="left" class="m4"><%= listBoardBest.get(0).getUserID()%></div>
+                                            <div align="right" class="m5"><%= listBoardBest.get(0).getBoardDate()%></div>
+                                        </p>
+                                        <p class="m3"><%= listBoardBest.get(0).getBoardContent()%></p>
+                                        <p>👁‍<%= listBoardBest.get(0).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardBest.get(0).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
+                                        <p><input type="text" value="댓글"></p>
+                                        <label for="infoBest1">close</label>
                                     </div>
                                 </div>
-                            </td>
-                            <td>
-                                🥈<br><br>
-                                <div class="label_content">
-                                    <input type="checkbox" id="infoBest2">
-                                    <label for ="infoBest2"><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" ></label>
-                                    <div class="content">
-                                        <div align="left"><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_3"></div>
-                                        <div align="right"><%= listBoardBest.get(1).getBoardTitle() %></div>
-                                        <label for ="infoBest2">close</label>
+                                <p>🧡<%= listBoardBest.get(0).getBoardLike()%></p><br><br>
+                            </div>
+                        </td>
+                        <td>
+                            🥈<br><br>
+                            <div class="label_content">
+                                <input type="checkbox" id="infoBest2">
+                                <label for ="infoBest2"><img src="uploadImage/<%= listImgBest.get(1).getImgFileRealName() %>" class="img_1" ></label>
+                                <div class="content">
+                                    <div class="m1">
+                                        <div class="swiper">
+                                            <div class="swiper-wrapper">
+                                                <%
+                                                    for(int i = 0;i < listImgBestDetail.get(1).size(); i++){
+                                                %>
+                                                    <div class="swiper-slide"><img src="uploadImage/<%= listImgBestDetail.get(1).get(i).getImgFileRealName() %>" class="img_1"></div>
+                                                <%
+                                                    }
+                                                %>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                    </div>
+                                    <div class="m2">
+                                        <p>
+                                            <div align="left" class="m4"><%= listBoardBest.get(1).getUserID()%></div>
+                                            <div align="right" class="m5"><%= listBoardBest.get(1).getBoardDate()%></div>
+                                        </p>
+                                        <p class="m3"><%= listBoardBest.get(1).getBoardContent()%></p>
+                                        <p>👁‍<%= listBoardBest.get(1).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardBest.get(1).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
+                                        <p><input type="text" value="댓글"></p>
+                                        <label for="infoBest2">close</label>
                                     </div>
                                 </div>
-                            </td>
-                            <td>
-                                🥉<br><br>
-                                <div class="label_content">
-                                    <input type="checkbox" id="infoBest3">
-                                    <label for ="infoBest3"><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" ></label>
-                                    <div class="content">
-                                        <div align="left"><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_3"></div>
-                                        <div align="right"><%= listBoardBest.get(2).getBoardTitle() %></div>
-                                        <label for ="infoBest3">close</label>
+                                <p>🧡<%= listBoardBest.get(1).getBoardLike()%></p><br><br>
+                            </div>
+                        </td>
+                        <td>
+                            🥉<br><br>
+                            <div class="label_content">
+                                <input type="checkbox" id="infoBest3">
+                                <label for ="infoBest3"><img src="uploadImage/<%= listImgBest.get(2).getImgFileRealName() %>" class="img_1" ></label>
+                                <div class="content">
+                                    <div class="m1">
+                                    <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                            <%
+                                                for(int i = 0;i < listImgBestDetail.get(2).size(); i++){
+                                            %>
+                                                <div class="swiper-slide"><img src="uploadImage/<%= listImgBestDetail.get(2).get(i).getImgFileRealName() %>" class="img_1"></div>
+                                            <%
+                                                }
+                                            %>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                    </div>
+                                    </div>
+                                    <div class="m2">
+                                        <p>
+                                            <div align="left" class="m4"><%= listBoardBest.get(2).getUserID()%></div>
+                                            <div align="right" class="m5"><%= listBoardBest.get(2).getBoardDate()%></div>
+                                        </p>
+                                        <p class="m3"><%= listBoardBest.get(2).getBoardContent()%></p>
+                                        <p>👁‍<%= listBoardBest.get(2).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardBest.get(2).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
+                                        <p><input type="text" value="댓글"></p>
+                                        <label for="infoBest3">close</label>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                                <p>🧡<%= listBoardBest.get(2).getBoardLike()%></p><br><br>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             
 			<div class="s3">
             	<div align="center" class="ss3">💿TODAY💿</div>
-            	<%
-
-            	%>
             	    <table class="ss2_2">
-            			<tr>
-            			    <td>
-            			    <div class="label_content">
-                            <input type="checkbox" id="infoBest1">
-                            <label for ="infoBest1"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_1" ></label>
-                            <div class="content">
-                                <div align="left"><img src="uploadImage/<%= listImgBest.get(0).getImgFileRealName() %>" class="img_3"></div>
-                                <div align="right"><%= listBoardBest.get(0).getBoardTitle() %></div>
-                                <label for ="infoBest1">close</label>
+                        <%
+                            for(int i = 1; i <= 10; i++){
+                                if(i % 5 == 1){
+                        %>
+                            <tr>
+                                <% } %>
+                            <td>
+                                <div class="label_content">
+                                    <input type="checkbox" id="info<%= i %>">
+                                    <label for ="info<%= i %>"><img src="uploadImage/<%= listImgToday.get(i-1).getImgFileRealName() %>" class="img_2"></label>
+                                    <div class="content">
+                                        <div class="m1">
+                                        <div class="swiper">
+                                            <div class="swiper-wrapper">
+                                                <%
+                                                    for(int j = 0; j < listImgDetail.get(i-1).size(); j++){
+                                                %>
+                                                    <div class="swiper-slide"><img src="uploadImage/<%= listImgDetail.get(i-1).get(j).getImgFileRealName() %>" class="img_1"></div>
+                                                <%
+                                                    }
+                                                %>
+                                            </div>
+                                            <div class="swiper-button-next"></div>
+                                            <div class="swiper-button-prev"></div>
+                                        </div>
+                                        </div>
+                                        <div class="m2">
+                                            <p>
+                                                <div align="left" class="m4"><%= listBoardToday.get(i-1).getUserID()%></div>
+                                                <div align="right" class="m5"><%= listBoardToday.get(i-1).getBoardDate()%></div>
+                                            </p>
+                                            <p class="m3"><%= listBoardToday.get(i-1).getBoardContent()%></p>
+                                            <p>👁‍<%= listBoardToday.get(i-1).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardToday.get(i-1).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
+                                            <p><input type="text" value="댓글"></p>
+                                            <label for="info<%= i %>">close</label>
+                                        </div>
+                                    </div>
+                                    <p>🧡<%= listBoardToday.get(i-1).getBoardLike()%></p><br><br>
                                 </div>
-                            </div>
                             </td>
-                    		<td><img src="uploadImage/사진2.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진3.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진4.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진5.jpg" class="img_2"></td>
+                        <%
+                            if(i % 5 == 0){
+                        %>
                         </tr>
-                        <tr>
-                            <td><img src="uploadImage/사진6.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진7.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진8.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진9.jpg" class="img_2"></td>
-                            <td><img src="uploadImage/사진10.jpg" class="img_2"></td>
-                        </tr>
+                        <%
+                                }
+                            }
+                        %>
                     </table>
             	</div>
             </div>
-			<div align="center" class="ss4">💡TIP💡</div>
-            <jsp:include page = "tip.jsp" flush = "false"/> <!--민욱이의 팁게시판 메인에 끌어오기-->
+        </div>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper('.swiper', {
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                direction: getDirection(),
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                on: {
+                    resize: function () {
+                        swiper1.changeDirection(getDirection());
+                    },
+                },
+            });
+
+            function getDirection() {
+                var windowWidth = window.innerWidth;
+                var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+                return direction;
+            }
+        </script>
 	</body>
+	<jsp:include page = "tip.jsp" flush = "false"/> <!--민욱이의 팁게시판 메인에 끌어오기-->
 </html>

@@ -409,17 +409,16 @@
     <%
         String userID = null;
         if(session.getAttribute("userID") != null){
-            userID = (String) session.getAttribute("userID");
+            userID = (String)session.getAttribute("userID");
         }
         if(userID == null){
             PrintWriter script = response.getWriter();
             script.println("<script>");
             script.println("alert('로그인 후 이용해주세요.')");
-            script.println("location.href = 'login'");
+            script.println("location.href = '/'");
             script.println("</script>");
         }
     %>
-
     <div class="board_wrap">
         <div class="board_title">
         </div>

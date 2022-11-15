@@ -294,6 +294,9 @@
                         margin-left : 4rem;
                         margin-right : 4rem;
                         }
+                        .t1{
+                        font-size:8px;
+                        }
        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500, initial-scale=1.0">
@@ -335,9 +338,9 @@
                     ArrayList<Board> list = boardDAO.getList(pageNumber);
                     for(int i = 0; i < list.size(); i++){
                 %>
-                <div>
+                <div class="t1">
                     <div class="num"><%= list.get(i).getBoardID() %> </div>
-                    <div class="title"><a href="?target=view?boardID = <%=list.get(i).getBoardID() %>"><%=list.get(i).getBoardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %></a></div>
+                    <div class="title"><a href="?target=view&boardID=<%=list.get(i).getBoardID() %>"><%=list.get(i).getBoardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %></a></div>
                     <div class="writer"><%= list.get(i).getUserID() %></div>
                     <div class="date"><%=list.get(i).getBoardDate().substring(0,11) %></div>
                     <div class="like"><%= list.get(i).getBoardLike() %></div>
@@ -351,17 +354,17 @@
             <%
                 if(pageNumber != 1 ){
             %>
-                 <a href="?target=board?pageNumber=<%=pageNumber -1 %>" class="bt prev">이전</a>
+                 <a href="?target=community&pageNumber=<%=pageNumber - 1 %>" class="bt prev">이전</a>
             <%
             } if(boardDAO.nextPage(pageNumber + 1 )) {
             %>
-                 <a href="?target=board?pageNumber=<%=pageNumber +1 %>" class="bt prev">다음</a>
+                 <a href="?target=community&pageNumber=<%=pageNumber + 1 %>" class="bt prev">다음</a>
             <%
             }
             %>
             </div>
             <div class="bt_wrap">
-                <a href="?target=write" class="on">글쓰기</a>>
+                <a href="?target=communityWrite" class="on">글쓰기</a>>
             </div>
         </div>
     </div>

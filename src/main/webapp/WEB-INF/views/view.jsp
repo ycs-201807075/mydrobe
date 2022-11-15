@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.yuhan.mydrobe.Board" %>
+<%@ page import="com.yuhan.mydrobe.BoardDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,47 +12,65 @@
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+
+    <%
+    	 String userID = null;
+    	 	if(session.getAttribute("userID") != null){
+    	 		userID = (String) session.getAttribute("userID");
+    	 	}
+    	 	int boardID = 0;
+    	 	if(request.getParameter("boardID") != null){
+                boardID = Integer.parseInt(request.getParameter("boardID"));
+    	 	}
+    	 	if(boardID == 0){
+    	 		 PrintWriter script = response.getWriter();
+            	 script.println("<script>");
+            	 script.println("alert('유효하지 않은 글입니다.')");
+            	 script.println("history.back()");
+            	 script.println("</script>");
+    	 	}
+    	 	BoardDAO boardDAO = new BoardDAO();
+    	 	Board board = new Board();
+    	 	board = boardDAO.getBoard(boardID);
+    %>
+
     <div class="board_wrap">
-        <div class="board_title">
-            <strong>공지사항</strong>
-            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
-        </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
+
+        <div class="board_write_wrap">
+            <div class="board_write">
                 <div class="title">
-                    글 제목이 들어갑니다.
+                    <dl>
+                        <dt>제목</dt>
+                        <dd> <%=board.getBoardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %> </dd>
+                    </dl>
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>번호</dt>
-                        <dd>1</dd>
+                            <dt>작성자</dt>
+                            <dd><%= board.getUserID() %></dd>
                     </dl>
                     <dl>
-                        <dt>글쓴이</dt>
-                        <dd>김이름</dd>
+                            <dt>작성일</dt>
+                            <dd> <%= board.getBoardDate().substring(0,11) %></dd>
                     </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd>2021.1.16</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
-                    </dl>
+
                 </div>
                 <div class="cont">
-                   우마이~<br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                   <br>
-                </div>
+                <dl>
+                 <dt></dt>
+                   <dd style="min-height:300px;font-size:25px;"> <%= board.getBoardContent().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %> </dd>
+                </dl>
             </div>
             <div class="bt_wrap">
-                <a href="?target=qna" class="on">목록</a>
-                <a href="?target=edit">수정</a>
+                <a href="?target=community"><input type="button" class ="on">글목록</a>
+                <%
+                    if(userID != null && userID.equals(board.getUserID())){
+                %>
+                    <a href="?target=update&boardID=<%= boardID %>"><input type="button" class ="on">글수정</a>
+                    <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction?boardID=<%= boardID %>"><input type="button" class ="on">글삭제</a>
+                <%
+                    }
+                %>
             </div>
         </div>
     </div>

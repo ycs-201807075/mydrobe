@@ -99,22 +99,6 @@ public class ImgFileDAO {
         return -1;
     }
 
-    public int uploadMyFile(String userID, String fileName, String fileRealName) {
-        String SQL = "INSERT INTO MYFILE VALUES (?, ?, ?, ?)";
-        try {
-            pstmt = conn.prepareStatement(SQL);
-            pstmt.setInt(1, getNextMyFile());
-            pstmt.setString(2, userID);
-            pstmt.setString(3, fileName);
-            pstmt.setString(4, fileRealName);
-            return pstmt.executeUpdate();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-
     public ArrayList<ImgFile> getImgListBest() {
         String SQL = "SELECT F.fileName, F.fileRealName FROM FILE F, BOARD D WHERE F.boardID = D.boardID AND F.fileStart = 1 ORDER BY D.boardLike DESC LIMIT 3;";
         ArrayList<ImgFile> list = new ArrayList<ImgFile>();
@@ -131,6 +115,29 @@ public class ImgFileDAO {
             e.printStackTrace();
         }
         return list; //데이터베이스 오류
+    }
+
+    public ArrayList<ArrayList<ImgFile>> getImgListBestDetail() {
+        ArrayList<ArrayList<ImgFile>> list = new ArrayList<ArrayList<ImgFile>>();
+        for(int i = 1; i <= 3; i++) {
+            String SQL = "SELECT F.fileName, F.fileRealName FROM FILE F, BOARD D WHERE F.boardID = D.boardID AND F.boardID = ? ORDER BY D.boardLike DESC";
+            ArrayList<ImgFile> lista = new ArrayList<ImgFile>();
+            try {
+                pstmt = conn.prepareStatement(SQL);
+                pstmt.setInt(1,i);
+                rs = pstmt.executeQuery();
+                while (rs.next()) {
+                    ImgFile imgFile = new ImgFile();
+                    imgFile.setImgFileName(rs.getString(1));
+                    imgFile.setImgFileRealName(rs.getString(2));
+                    lista.add(imgFile);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            list.add(lista);
+        }
+        return list;
     }
 
     public ArrayList<ImgFile> getImgListToday() {

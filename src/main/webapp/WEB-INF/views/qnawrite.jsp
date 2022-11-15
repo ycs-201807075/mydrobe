@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.yuhan.mydrobe.qnaBoard" %>
+<%@ page import="com.yuhan.mydrobe.qnaBoardDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -354,12 +358,12 @@
 
                                 .board_write .title dt,
                                 .board_write .info dt {
-                                    display: none;
+                                    display: inline;
                                 }
 
                                 .board_write .title dd,
                                 .board_write .info dd {
-                                    width: 100%;
+                                    width: 50%;
                                 }
 
                                 .board_write .title input[type="text"],
@@ -413,13 +417,13 @@
             <div class="board_write">
                 <div class="title">
                     <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="qnaboardTitle" placeholder="제목 입력" maxlength="30"></dd>
+                        <dt>제목 : </dt>
+                        <dd width="10px"><input type="text" name="qnaboardTitle" placeholder="제목 입력" maxlength="20" ></dd>
                     </dl>
                 </div>
                 <div class="info">
                     <dl>
-                             <dt>비밀번호</dt>
+                             <dt>비밀번호 : </dt>
                             <dd><input type="password" name = "qnaboardpw" placeholder="비밀번호 입력" pattern="^[0-9]+$" minlength="4" maxlength="4"></dd>
                     </dl>
                     <dl>
@@ -428,7 +432,7 @@
 
                 </div>
                 <div class="cont">
-                   <dd><textarea name="qnaboardContent" placeholder="제목 입력" maxlength="3000"></textarea></dd>
+                   <dd><textarea name="qnaboardContent" placeholder="내용 입력" maxlength="3000"></textarea></dd>
                 </div>
             </div>
             <div class="bt_wrap">

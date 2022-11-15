@@ -335,9 +335,9 @@
                 %>
                 <div>
                     <div class="num"> <%= list.get(i).getqnaboardID() %> </div>
-                    <div class="title"><a href="?target=qnaboardview&qanboardID = <%=list.get(i).getqnaboardID() %>"><%=list.get(i).getqnaboardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %></a></div>
+                    <div class="title"><a href="?target=qnaboardview&qnaboardID=<%=list.get(i).getqnaboardID()%>"><%=list.get(i).getqnaboardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %></a></div>
                     <div class="writer"> <%= list.get(i).getUserID() %> </div>
-                    <div class="count"> <%=list.get(i).getboardDate().substring(0,11) %> </div>
+                    <div class="date"> <%=list.get(i).getboardDate().substring(0,11) %> </div>
                 </div>
                 <%
                     }
