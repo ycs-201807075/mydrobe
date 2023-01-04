@@ -402,6 +402,20 @@
             #file_save{
                 display: none;
             }
+
+            input[type=file]::file-selector-button {
+              margin: 2px;
+              width: 150px;
+              height: 30px;
+              background: #fff;
+              border: 1px solid rgb(77,77,77);
+              border-radius: 10px;
+              cursor: pointer;
+              &:hover {
+                background: rgb(77,77,77);
+                color: #fff;
+              }
+            }
     </style>
 </head>
 <body>
@@ -421,30 +435,34 @@
     %>
     <div class="board_wrap">
         <div class="board_title">
-        </div>
-        <form action="todayAction" method="post" enctype="multipart/form-data">
-        <div class="board_write_wrap">
-        <h1>TODAY 작성</h1>
-        <p>----------------------</p>
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="boardTitle" placeholder="제목 입력" maxlength="30"></dd>
-                    </dl>
+            <form action="todayAction" method="post" enctype="multipart/form-data">
+                <div class="board_write_wrap">
+                <h1>TODAY 작성</h1>
+                <p>----------------------</p>
+                    <div class="board_write">
+                        <div class="title">
+                            <dl>
+                                <dt>제목</dt>
+                                <dd><input type="text" name="boardTitle" placeholder="제목 입력" maxlength="30"></dd>
+                            </dl>
+                        </div>
+                        <div class="cont">
+                           <dd><textarea name="boardContent" placeholder="제목 입력" maxlength="3000"></textarea></dd>
+                        </div>
+                        <div class="imgs">
+                            <div><input type="file" name="file5"></div>
+                            <div><input type="file" name="file4"></div>
+                            <div><input type="file" name="file3"></div>
+                            <div><input type="file" name="file2"></div>
+                            <div><input type="file" name="file1"></div>
+                        </div>
+                    </div>
+                    <div class="bt_wrap">
+                        <input type="submit" class ="on" value="글등록">
+                        <a href="?target=today">취소</a>
+                    </div>
                 </div>
-                <div class="cont">
-                   <dd><textarea name="boardContent" placeholder="제목 입력" maxlength="3000"></textarea></dd>
-                </div>
-                <div class="imgs">
-                    <div class="text3"><label class="imgbtn" for="file_save">이미지 선택<input type="file" id="file_save" multiple /></label></div>
-                </div>
-            </div>
-            <div class="bt_wrap">
-                <input type="submit" class ="on" value="글등록">
-          </form>
-                <a href="?target=today">취소</a>
-            </div>
+            </form>
         </div>
     </div>
 </body>

@@ -18,11 +18,13 @@
 
             <style>
             .p3{
-                margin-right:5rem;
+
+                margin-right:15rem;
+                border:1px;
             }
             .p1{
                 position:absolute;
-                margin-left:7rem;
+                margin-left:13rem;
                 width:10rem;
             }
             .p2{
@@ -49,7 +51,7 @@
                 border:1px solid;
                         }
             .m4{
-                position:absolute;
+
                 width:5rem;
                 margin-left:3rem;
             }
@@ -109,91 +111,6 @@
 
 
 
-            body {
-            margin: 0;
-            padding: 0;
-            font-family: verdana;
-            }
-            .center {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            a {
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 30px;
-            }
-            a span {
-                padding: 15px;
-                transition: .5s;
-                position: relative;
-            }
-            a span:nth-child(1) {
-                color: #fff;
-                background: #262626;
-            }
-            a span:nth-child(2) {
-                color: #fff;
-                background: #ff3636;
-            }
-            a span:nth-child(1):before {
-                content: attr(data-attr);
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: #ff3636;
-                padding: 15px;
-                transition: 0.5S;
-                transform-origin: top;
-                transform: rotateX(90deg) translateY(-50%);
-            }
-            a:hover span:nth-child(1):before {
-                transform: rotateX(0deg) translateY(0%);
-            }
-            a span:nth-child(2):before {
-                content: attr(data-attr);
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: #262626;
-                padding: 15px;
-                transition: 0.5S;
-                transform-origin: bottom;
-                transform: rotateX(90deg) translateY(50%);
-            }
-            a:hover span:nth-child(2):before {
-                transform: rotateX(0deg) translateY(0%);
-            }
-            a  span:nth-child(1):after {
-              content: attr(data-attr);
-              padding: 15px;
-              position: absolute;
-              top: 0;
-              left: 0;
-              background: #262626;
-              transform-origin: bottom;
-              transform: rotateX(0deg) translateY(0%);
-              transition: 0.5s;
-            }
-            a:hover span:nth-child(1):after {
-              transform: rotateX(90deg) translateY(50%);
-            }
-            a span:nth-child(2):after {
-                content: attr(data-attr);
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: #ff3636;
-                padding: 15px;
-                transition: 0.5S;
-                transform-origin: top;
-                transform: rotateX(0deg) translateY(0%);
-            }
-            a:hover span:nth-child(2):after {
-                transform: rotateX(90deg) translateY(-50%);
-            }
 
 
 
@@ -203,7 +120,7 @@
 
     <h1>
         <div class="p1">TODAY▶</div>
-        <div align="right" class="p3"><a href="?target=todaywrite"><span data-attr="APO">Buy</span><span data-attr="STA">Now</span></a></div>
+        <div align="right"><a href="?target=todaywrite" class="p3">게시물작성</a></div>
     </h1>
     <hr class="p2">
     <%
@@ -247,7 +164,6 @@
                     <div class="m2">
                         <p>
                             <div align="left" class="m4"><%= listBoardToday.get(i-1).getUserID()%></div>
-                            <div align="right" class="m5"><%= listBoardToday.get(i-1).getBoardDate()%></div>
                         </p>
                         <p class="m3"><%= listBoardToday.get(i-1).getBoardContent()%></p>
                         <p>👁‍<%= listBoardToday.get(i-1).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardToday.get(i-1).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>

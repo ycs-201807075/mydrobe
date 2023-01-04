@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ImgFileDAO {
@@ -66,6 +67,24 @@ public class ImgFileDAO {
         return 1;
     }
 
+    public int[] getBest() {
+        int[] result = new int[3];
+        String SQL = "SELECT boardID FROM BOARD ORDER BY boardLike DESC LIMIT 3";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            int i = 0;
+            while (rs.next()) {
+                result[i] = rs.getInt(1);
+                i++;
+            }
+            return result;
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     // DB에 이미지 이름 저장
     public int upload(int boardID, String fileName, String fileRealName, int start) {
@@ -119,12 +138,13 @@ public class ImgFileDAO {
 
     public ArrayList<ArrayList<ImgFile>> getImgListBestDetail() {
         ArrayList<ArrayList<ImgFile>> list = new ArrayList<ArrayList<ImgFile>>();
-        for(int i = 1; i <= 3; i++) {
+        for(int i = 0; i < 3; i++) {
             String SQL = "SELECT F.fileName, F.fileRealName FROM FILE F, BOARD D WHERE F.boardID = D.boardID AND F.boardID = ? ORDER BY D.boardLike DESC";
             ArrayList<ImgFile> lista = new ArrayList<ImgFile>();
+            int j[] = getBest();
             try {
                 pstmt = conn.prepareStatement(SQL);
-                pstmt.setInt(1,i);
+                pstmt.setInt(1,j[i]);
                 rs = pstmt.executeQuery();
                 while (rs.next()) {
                     ImgFile imgFile = new ImgFile();
@@ -141,7 +161,7 @@ public class ImgFileDAO {
     }
 
     public ArrayList<ImgFile> getImgListToday() {
-        String SQL = "SELECT fileName, fileRealName FROM FILE WHERE fileStart = 1";
+        String SQL = "SELECT fileName, fileRealName FROM FILE WHERE fileStart = 1 ORDER BY boardID DESC";
         ArrayList<ImgFile> list = new ArrayList<ImgFile>();
         try {
             PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -161,7 +181,7 @@ public class ImgFileDAO {
 
     public ArrayList<ArrayList<ImgFile>> getImgListDetail() {
         ArrayList<ArrayList<ImgFile>> list = new ArrayList<ArrayList<ImgFile>>();
-        for(int i = 1; i <= getMax(); i++) {
+        for(int i = getMax(); i >= 1; i--) {
             String SQL = "SELECT fileName, fileRealName FROM FILE WHERE boardID = ?";
             ArrayList<ImgFile> lista = new ArrayList<ImgFile>();
             try {

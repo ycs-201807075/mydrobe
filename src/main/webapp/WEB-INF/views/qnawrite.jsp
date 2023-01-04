@@ -293,7 +293,7 @@
                                 resize: vertical;
                             }
                             .board_wrap {
-                                    width: 100%;
+
                                     min-width: 320px;
                                     padding: 0 30px;
                                     box-sizing: border-box;

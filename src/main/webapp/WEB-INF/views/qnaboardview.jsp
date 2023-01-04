@@ -443,12 +443,12 @@
                 </dl>
             </div>
             <div class="bt_wrap">
-                <a href="?target=qna"><input type="button" class ="on">글목록</a>
+                <a href="?target=qna">글목록</a>
                 <%
                     if(userID != null && userID.equals(qnaboard.getUserID())){
                 %>
-                    <a href="?target=qnaupdate&qnaboardID=<%= qnaboardID %>"><input type="button" class ="on">글수정</a>
-                    <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="qnadeleteAction?qnaboardID=<%= qnaboardID %>"><input type="button" class ="on">글삭제</a>
+                    <a href="?target=qnaupdate&qnaboardID=<%= qnaboardID %>">글수정</a>
+                    <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="qnadeleteAction?qnaboardID=<%= qnaboardID %>">글삭제</a>
                 <%
                     }
                 %>

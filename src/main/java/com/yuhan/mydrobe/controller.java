@@ -70,6 +70,18 @@ public class controller {
     public String qnaupdateAction() {
         return "qnaupdateAction"; }
 
+    @PostMapping("cmwriteAction")
+    public String cmwriteAction() {
+        return "cmwriteAction"; }
+
+    @PostMapping("cmdeleteAction")
+    public String cmdeleteAction() {
+        return "cmdeleteAction"; }
+
+    @PostMapping("cmupdateAction")
+    public String cmupdateAction() {
+        return "cmupdateAction"; }
+
     @PostMapping("todayAction")
     public String todayAction() {
         return "todayAction"; }

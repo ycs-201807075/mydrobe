@@ -22,7 +22,7 @@
   <style>
 
         .main{
-            margin-top:10px;
+            margin-top:30px;
             width: 100%;
             height: 300px;
             border: 1px;

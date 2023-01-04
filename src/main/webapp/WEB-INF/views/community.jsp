@@ -111,10 +111,10 @@
     }
 
     .board_list .date {
-        width: 10%;
+        width: 12%;
     }
     .board_list .like{
-        width: 10%;
+        width: 8%;
     }
 
     .board_list .count {
@@ -340,7 +340,7 @@
                 %>
                 <div class="t1">
                     <div class="num"><%= list.get(i).getBoardID() %> </div>
-                    <div class="title"><a href="?target=view&boardID=<%=list.get(i).getBoardID() %>"><%=list.get(i).getBoardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %></a></div>
+                    <div class="title"><a href="?target=cmboardview&boardID=<%=list.get(i).getBoardID() %>"><%=list.get(i).getBoardTitle().replaceAll(" ","&nbsp").replaceAll("<","&lt").replaceAll("<","&gt").replaceAll("\n","<br>") %></a></div>
                     <div class="writer"><%= list.get(i).getUserID() %></div>
                     <div class="date"><%=list.get(i).getBoardDate().substring(0,11) %></div>
                     <div class="like"><%= list.get(i).getBoardLike() %></div>

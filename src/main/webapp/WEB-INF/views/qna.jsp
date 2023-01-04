@@ -114,7 +114,7 @@
     }
 
     .board_list .date {
-        width: 10%;
+        width: 12%;
     }
 
     .board_list .count {

@@ -71,7 +71,7 @@ public class BoardDAO {
         try {
             int result = getNext();
             PreparedStatement pstmt = conn.prepareStatement(SQL);
-            pstmt.setInt(1, getNext());
+            pstmt.setInt(1, result);
             pstmt.setString(2, userID);
             pstmt.setString(3, boardTitle);
             pstmt.setString(4, getDate());
@@ -99,8 +99,8 @@ public class BoardDAO {
                 board.setBoardTitle(rs.getString(3));
                 board.setBoardDate(rs.getString(4));
                 board.setBoardContent(rs.getString(5));
-                board.setBoardRead(rs.getInt(6));
-                board.setBoardLike(rs.getInt(7));
+                board.setBoardLike(rs.getInt(6));
+                board.setBoardRead(rs.getInt(7));
                 list.add(board);
             }
         } catch (Exception e) {

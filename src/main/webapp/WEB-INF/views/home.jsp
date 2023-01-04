@@ -46,7 +46,6 @@
                 border:1px solid;
                         }
             .m4{
-                position:absolute;
                 width:5rem;
                 margin-left:3rem;
             }
@@ -59,6 +58,7 @@
 		        height:30rem;
 		        border:2px solid #000000;
         	    border-radius: 2rem;
+        	    margin-top:3rem;
         	}
 		    .img_2{
 		        width:15rem;
@@ -73,6 +73,7 @@
 		    .ss2_1{
                 font-size : 30px;
                  width:100rem;
+                 margin-left:8.5rem;
 		    }
 			.s0{
 			    position: relative;
@@ -241,7 +242,6 @@
                 <h1>
                     <div class="p1">◀BEST▶</div>
                 </h1>
-                <hr class="p2">
                 <%
                     // 이미지 객체
                     ImgFileDAO imgFileDAO = new ImgFileDAO();
@@ -257,7 +257,7 @@
 
 
                 %>
-                <table class="ss2_1" align="center">
+                <table class="ss2_1" >
                     <tr>
                         <td>
                             🥇<br><br>
@@ -283,7 +283,7 @@
                                     <div class="m2">
                                         <p>
                                             <div align="left" class="m4"><%= listBoardBest.get(0).getUserID()%></div>
-                                            <div align="right" class="m5"><%= listBoardBest.get(0).getBoardDate()%></div>
+
                                         </p>
                                         <p class="m3"><%= listBoardBest.get(0).getBoardContent()%></p>
                                         <p>👁‍<%= listBoardBest.get(0).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardBest.get(0).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
@@ -318,7 +318,6 @@
                                     <div class="m2">
                                         <p>
                                             <div align="left" class="m4"><%= listBoardBest.get(1).getUserID()%></div>
-                                            <div align="right" class="m5"><%= listBoardBest.get(1).getBoardDate()%></div>
                                         </p>
                                         <p class="m3"><%= listBoardBest.get(1).getBoardContent()%></p>
                                         <p>👁‍<%= listBoardBest.get(1).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardBest.get(1).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
@@ -353,7 +352,6 @@
                                     <div class="m2">
                                         <p>
                                             <div align="left" class="m4"><%= listBoardBest.get(2).getUserID()%></div>
-                                            <div align="right" class="m5"><%= listBoardBest.get(2).getBoardDate()%></div>
                                         </p>
                                         <p class="m3"><%= listBoardBest.get(2).getBoardContent()%></p>
                                         <p>👁‍<%= listBoardBest.get(2).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardBest.get(2).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
@@ -400,7 +398,6 @@
                                         <div class="m2">
                                             <p>
                                                 <div align="left" class="m4"><%= listBoardToday.get(i-1).getUserID()%></div>
-                                                <div align="right" class="m5"><%= listBoardToday.get(i-1).getBoardDate()%></div>
                                             </p>
                                             <p class="m3"><%= listBoardToday.get(i-1).getBoardContent()%></p>
                                             <p>👁‍<%= listBoardToday.get(i-1).getBoardRead()%>&nbsp&nbsp&nbsp&nbsp🧡<%= listBoardToday.get(i-1).getBoardLike()%>&nbsp&nbsp&nbsp&nbsp💬 123</p>
@@ -422,7 +419,7 @@
                     </table>
             	</div>
             </div>
-        </div>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 

@@ -112,7 +112,7 @@
 
         <br>
             <!--로그인 버튼 -->
-            <input type="submit" id="login" value="로그인" />
+            <input type="submit" id="login" value="비밀번호 찾기" />
     </form>
 </div>
     <!--

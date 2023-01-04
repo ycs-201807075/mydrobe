@@ -66,7 +66,7 @@
                 <%
                     if(userID != null && userID.equals(board.getUserID())){
                 %>
-                    <a href="?target=update&boardID=<%= boardID %>"><input type="button" class ="on">글수정</a>
+                    <a href="?target=cmupdate&boardID=<%= boardID %>"><input type="button" class ="on">글수정</a>
                     <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction?boardID=<%= boardID %>"><input type="button" class ="on">글삭제</a>
                 <%
                     }
